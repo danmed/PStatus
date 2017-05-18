@@ -3,6 +3,7 @@ Ping of internal servers and port check of related services with a Web front end
 
 # Requirements
 Web server running PHP (7 is tested.. 5 should work fine)
+
 MYSQL Database (See pstatus.sql for structure)
 
 # To Do 
