@@ -13,7 +13,7 @@ else
 <head>
 <meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
 <title>
-Status
+PStatus
 </title>
 <style>
 body
