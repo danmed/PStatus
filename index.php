@@ -23,6 +23,18 @@ font-family:courier,serif
     100% { transform: rotate(360deg); }
 }
 </style>
+	<script>
+		var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+	</script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
 <script type="text/javascript">
 
@@ -36,6 +48,7 @@ $(document).ready(function(){
 <body>
 <Center>
 <div class="loader"></div>
+	<div class="mydiv">
 <table id="status" cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center><b>Server Ping Status</td></tr>
 <tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td></tr>
@@ -94,4 +107,5 @@ function pingtest($ip) {
 mysqli_close($db_handle);
 
 ?>
-
+		</table>
+	</div>
