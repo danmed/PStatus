@@ -1,6 +1,10 @@
 <html>
+<?PHP
+	$refresh = $_GET['refresh'];
+	if (!isset($_GET['refresh']) {$refresh = "20";}
+	    else {$refresh = $_GET['refresh'];}
 <head>
-<meta http-equiv="refresh" content="20">
+<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
 <title>
 Status
 </title>
