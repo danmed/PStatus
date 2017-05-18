@@ -9,19 +9,6 @@ body
 {
 font-family:courier,serif
 }
-.loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 </style>
 	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
@@ -34,10 +21,9 @@ $(document).ready(function(){
 
 </script>
 </head>
-<body onload="myFunction()">
+<body>
 <Center>
-<div class="loader"></div>
-<div style="display:none;" id="myDiv" class="animate-bottom">
+
 <table id="status" cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center><b>Server Ping Status</td></tr>
 <tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td></tr>
@@ -110,4 +96,5 @@ function showPage() {
 	</script>
 	
 	</table>
-	</div>
+	</body>
+	</html>
