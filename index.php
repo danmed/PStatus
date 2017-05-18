@@ -34,7 +34,10 @@ $(document).ready(function(){
 </head>
 <body>
 <Center>
-
+<table cellpadding="4" cellspacing="4" border="1">
+	<tr>
+		<td><form method="GET" action="<?php echo $_SERVER['PHP_SELF'];?>"><input type="text" width="5"><input type="submit" value="submit"></form></td></tr></table>
+	
 <table id="status" cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center><b>Server Ping Status</td></tr>
 <tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td></tr>
