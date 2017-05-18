@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 </script>
 </head>
-<body>
+<body onload="myFunction()">
 <Center>
 <div class="loader"></div>
 <div style="display:none;" id="myDiv" class="animate-bottom">
