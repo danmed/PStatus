@@ -23,18 +23,7 @@ font-family:courier,serif
     100% { transform: rotate(360deg); }
 }
 </style>
-	<script>
-		var myVar;
-
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-	</script>
+	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
 <script type="text/javascript">
 
@@ -107,5 +96,18 @@ function pingtest($ip) {
 mysqli_close($db_handle);
 
 ?>
-		</table>
+	<script>
+		var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+	</script>
+	
+	</table>
 	</div>
