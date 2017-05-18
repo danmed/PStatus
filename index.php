@@ -36,7 +36,7 @@ $(document).ready(function(){
 <Center>
 <table cellpadding="4" cellspacing="4" border="1">
 	<tr>
-		<td><form method="GET" action="<?php echo $_SERVER['PHP_SELF'];?>"><input type="text" name="refresh" width="5"><input type="submit" value="submit"></form></td></tr></table>
+		<td><form method="GET" action="<?php echo $_SERVER['PHP_SELF'];?>"><input type="text" name="refresh" size="5"><input type="submit" value="Go"></form></td></tr></table>
 	
 <table id="status" cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center><b>Server Ping Status</td></tr>
