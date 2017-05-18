@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta http-equiv="refresh" content="20">
 <title>
 Status
 </title>
