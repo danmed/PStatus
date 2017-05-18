@@ -48,7 +48,7 @@ $(document).ready(function(){
 <body>
 <Center>
 <div class="loader"></div>
-	<div class="mydiv">
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <table id="status" cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center><b>Server Ping Status</td></tr>
 <tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td></tr>
