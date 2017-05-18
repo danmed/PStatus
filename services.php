@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta http-equiv="refresh" content="20">
 <?PHP
 $parent = $_GET['parent'];
 $device = $_GET['device'];
