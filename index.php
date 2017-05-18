@@ -1,12 +1,14 @@
 <html>
 <?PHP
-	$refresh = $_GET['refresh'];
-	if (isset($_GET['refresh']) {
-					$refresh = $_GET['refresh'];
-					}
-	    else {
-		    $refresh = "20";
-	    		}
+$refresh = $_GET['refresh'];
+if (isset($_GET['refresh'])) 
+{
+$refresh = $_GET['refresh'];
+}
+else 
+{
+	$refresh = "20";
+}
 	    ?>
 <head>
 <meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
