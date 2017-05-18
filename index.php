@@ -7,6 +7,7 @@
 	    else {
 		    $refresh = "20";
 	    		}
+	    ?>
 <head>
 <meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
 <title>
