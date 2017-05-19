@@ -20,7 +20,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
     $ip = $_GET['ip'];
     $info = $_GET['info'];
     $purpose = $_GET['purpose'];
-    $sql = "INSERT INTO servers (device, ip, info, purpose) VALUES ($device, $ip, $info, $purpose)";
+    $sql = "INSERT INTO servers (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
     if (mysqli_query($db_handle, $sql)) {
     echo "New record created successfully";
 } else {
