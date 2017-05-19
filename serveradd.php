@@ -26,6 +26,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 } else {
     $updateresult = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
 }
+  }
  
    if (isset($_POST['addservice']))
   {
@@ -39,9 +40,9 @@ $db_found = mysqli_select_db($db_handle, 'status');
 } else {
     $updateresult2 = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
 }
-    
+   }  
    
-  }
+
 ?>
 </head>
 <body>
