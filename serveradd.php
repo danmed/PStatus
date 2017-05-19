@@ -64,7 +64,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <input type="hidden" value="addservice" name="addservice">
 <table cellpadding="3" cellspacing="4" border="1">
 <tr><td colspan="4"><center>Add Service</td></tr>
-  <tr><td>Name</td><td>Port</td><td>Parent</td><td>Info</td></tr>
+  <tr><td>Name</td><td>Port</td><td>Parent</td></tr>
 <tr><td><input type="text" size="20" name="name"></td><td><input type="text" size="20" name="port"></td><td>
 <select name="parent">
 
@@ -80,7 +80,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 }
 ?>
   
-</td><td><input type="text" size="20" name="info"></tr>
+</td></tr>
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
 <tr><td colspan="4"><center><?PHP echo $updateresult2; ?></td></tr>
 </table>
