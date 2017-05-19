@@ -27,7 +27,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
     
-    mysqli_query($db_handle, $sql);
+   
   }
 ?>
 </head>
