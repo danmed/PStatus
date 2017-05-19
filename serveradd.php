@@ -13,12 +13,12 @@ font-family:courier,serif
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
-  if (isset($_GET['doit']))
+  if (isset($_POST['doit']))
   {
-    $device = $_GET['device'];
-    $ip = $_GET['ip'];
-    $info = $_GET['info'];
-    $purpose = $_GET['purpose'];
+    $device = $_POST['device'];
+    $ip = $_POST['ip'];
+    $info = $_POST['info'];
+    $purpose = $_POST['purpose'];
     $sql = "INSERT INTO servers (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
     if (mysqli_query($db_handle, $sql)) {
     $updateresult = "New record created successfully";
@@ -32,7 +32,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 </head>
 <body>
 <center>
- <form method="get" action="serveradd.php">
+<form method="POST" action="serveradd.php">
 <table cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center>Add Server</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
