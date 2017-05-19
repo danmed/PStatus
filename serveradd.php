@@ -15,4 +15,4 @@ font-family:courier,serif
 <table cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center>Add Server</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
-  <tr><td><form action="get"><input type="text" size="40"></td><td><input type="text" size="40"></td><td><input type="text" size="40"></td><td><input type="text" size="40"></td></tr>
+  <tr><td><form action="get"><input type="text" size="20"></td><td><input type="text" size="20"></td><td><input type="text" size="20"></td><td><input type="text" size="20"></td></tr>
