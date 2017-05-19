@@ -13,7 +13,7 @@ font-family:courier,serif
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
-  if (isset $_GET['doit'])
+  if (isset($_GET['doit']))
   {
     $device = $db_field['device'];
     $ip = $db_field['ip'];
