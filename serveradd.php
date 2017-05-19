@@ -61,7 +61,7 @@ while ($db_field = mysqli_fetch_assoc($result))
   $parentid = $db_field['id'];
   $parentname = $db_field['device'];
   
-  echo "<option value='" . $id . "'>" . $device . "</option>";
+  echo "<option value='" . $parentid . "'>" . $parentname . "</option>";
 }
   ?>
   
