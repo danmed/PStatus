@@ -66,8 +66,8 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <tr><td><input type="text" size="20" name="name"></td><td><input type="text" size="20" name="port"></td><td>
 <select name="parent">
 
-  <?PHP
-$SQL = "select * from servers"	;
+<?PHP
+$SQL = "select * from servers";
 $result = mysqli_query($db_handle, $SQL);
 while ($db_field = mysqli_fetch_assoc($result))
 {
@@ -76,7 +76,7 @@ while ($db_field = mysqli_fetch_assoc($result))
  
   echo "<option value='" . $parentid . "'>" . $parentname . "</option>";
 }
-  ?>
+?>
   
 </td><td><input type="text" size="20" name="info"></tr>
 <tr><td colspan="3"><center><input type="submit" value="submit"></td></tr>
