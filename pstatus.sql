@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 18, 2017 at 10:21 AM
+-- Generation Time: May 19, 2017 at 09:09 AM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -47,6 +47,19 @@ CREATE TABLE `services` (
   `port` int(11) NOT NULL,
   `parent` int(11) NOT NULL,
   `info` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `smartcontrols`
+--
+
+CREATE TABLE `smartcontrols` (
+  `id` int(11) DEFAULT NULL,
+  `poweron` text NOT NULL,
+  `poweroff` text NOT NULL,
+  `parent` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
