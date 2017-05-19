@@ -6,8 +6,14 @@ Web server running PHP (7 is tested.. 5 should work fine)
 
 MYSQL Database (See pstatus.sql for structure)
 
-# To Do 
-Admin interface to add servers and related services
+# WIP
+
+19.05.17 - Admin page : So far you can add a server and a service.. the rest needs to be done in SQL at the moment
+
+# Done
+Add auto refresh rate
+Add services for each parent server
+Add Smart device controls
 
 # Screenshot
 ![Alt text](/../screenshots/pstatus.png?raw=true "Main Screen")
