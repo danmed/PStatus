@@ -17,5 +17,6 @@ font-family:courier,serif
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
 <tr><td><form action="get"><input type="text" size="20"></td><td><input type="text" size="20"></td><td><input type="text" size="20"></td><td><input type="text" size="20"></td></tr>
 </table>
+  <br>
 <input type="submit" value="submit">
   </form>
