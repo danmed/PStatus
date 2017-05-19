@@ -15,6 +15,7 @@ $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
   if (isset($_GET['doit']))
   {
+    echo "i'm in";
     $device = $db_field['device'];
     $ip = $db_field['ip'];
     $info = $db_field['info'];
