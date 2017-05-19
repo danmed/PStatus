@@ -57,6 +57,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
 <tr><td colspan="4"><center><?PHP echo $updateresult; ?></td></tr>
 </table>
+  </form>
 <br>
 <!-- ADD SERVICE FORM -->
 <form method="POST" action="serveradd.php">
@@ -83,8 +84,6 @@ while ($db_field = mysqli_fetch_assoc($result))
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
 <tr><td colspan="4"><center><?PHP echo $updateresult2; ?></td></tr>
 </table>
-  
-  
 </form>
 </body>
 </html>
