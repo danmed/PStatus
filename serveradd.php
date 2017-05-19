@@ -32,6 +32,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 </head>
 <body>
 <center>
+/* ADD SERVER FORM */
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addserver" name="addserver">
 <table cellpadding="4" cellspacing="4" border="1">
@@ -41,6 +42,8 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
 <tr><td colspan="4"><center><?PHP echo $updateresult; ?></td></tr>
 </table>
+<br>
+ /* ADD SERVICE FORM */
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addservice" name="addservice">
 <table cellpadding="4" cellspacing="4" border="1">
