@@ -13,6 +13,7 @@ font-family:courier,serif
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
+  
   if (isset($_POST['doit']))
   {
     $device = $_POST['device'];
@@ -32,7 +33,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 </head>
 <body>
 <center>
-/* ADD SERVER FORM */
+<!-- ADD SERVER FORM -->
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addserver" name="addserver">
 <table cellpadding="4" cellspacing="4" border="1">
@@ -43,13 +44,28 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <tr><td colspan="4"><center><?PHP echo $updateresult; ?></td></tr>
 </table>
 <br>
- /* ADD SERVICE FORM */
+<!-- ADD SERVICE FORM -->
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addservice" name="addservice">
 <table cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center>Add Service</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Port</td><td>Parent</td></tr>
-<tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="port"></td><td><input type="text" size="20" name="parent"></td></tr>
+<tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="port"></td><td>
+<select name="parent">
+
+  <?PHP
+$SQL = "select * from servers"	;
+$result = mysqli_query($db_handle, $SQL);
+while ($db_field = mysqli_fetch_assoc($result))
+{
+  $parentid = $db_field['id'];
+  $parentname = $db_field['device'];
+  
+  echo "<option value='" . $id . "'>" . $device . "</option>";
+}
+  ?>
+  
+</td></tr>
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
 <tr><td colspan="4"><center><?PHP echo $updateresult; ?></td></tr>
 </table>
