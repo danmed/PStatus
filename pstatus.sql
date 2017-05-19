@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 19, 2017 at 09:09 AM
+-- Generation Time: May 19, 2017 at 02:36 PM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -30,7 +30,6 @@ CREATE TABLE `servers` (
   `id` int(11) NOT NULL,
   `device` text NOT NULL,
   `ip` text NOT NULL,
-  `port` text NOT NULL,
   `info` text NOT NULL,
   `purpose` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -45,8 +44,7 @@ CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `port` int(11) NOT NULL,
-  `parent` int(11) NOT NULL,
-  `info` text NOT NULL
+  `parent` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -107,12 +105,12 @@ ALTER TABLE `smartdevices`
 -- AUTO_INCREMENT for table `servers`
 --
 ALTER TABLE `servers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `smartdevices`
 --
