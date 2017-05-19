@@ -16,10 +16,10 @@ $db_found = mysqli_select_db($db_handle, 'status');
   if (isset($_GET['doit']))
   {
     echo "i'm in";
-    $device = $db_field['device'];
-    $ip = $db_field['ip'];
-    $info = $db_field['info'];
-    $purpose = $db_field['purpose'];
+    $device = $_GET['device'];
+    $ip = $_GET['ip'];
+    $info = $_GET['info'];
+    $purpose = $_GET['purpose'];
     $sql = "INSERT INTO servers (device, ip, info, purpose)VALUES ($device, $ip, $info, $purpose)";
     if (mysqli_query($db_handle, $sql)) {
     echo "New record created successfully";
