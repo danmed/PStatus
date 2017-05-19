@@ -18,9 +18,8 @@ $db_found = mysqli_select_db($db_handle, 'status');
   {
     $device = $_POST['device'];
     $ip = $_POST['ip'];
-    $info = $_POST['info'];
     $purpose = $_POST['purpose'];
-    $sql = "INSERT INTO servers (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
+    $sql = "INSERT INTO servers (device, ip, purpose) VALUES ('$device', '$ip', '$purpose')";
     if (mysqli_query($db_handle, $sql)) {
     $updateresult = "New record created successfully";
 } else {
