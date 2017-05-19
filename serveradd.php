@@ -32,17 +32,16 @@ $db_found = mysqli_select_db($db_handle, 'status');
 </head>
 <body>
 <center>
-  <form method="get" action="serveradd.php">
+ <form method="get" action="serveradd.php">
 <table cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center>Add Server</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
 <tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="info"></td><td><input type="text" size="20" name="purpose"></td></tr>
-<tr><Td colspan="4"><center><input type="hidden" value="doit" name="doit"><input type="submit" value="submit"><td></tr>
-<tr><td colspan="4"><?PHP echo $updateresult; ?></td></tr>
-    </table>
-<br>
-
+<tr><td colspan="4"><center><input type="hidden" value="doit" name="doit"><input type="submit" value="submit"><td></tr>
+<tr><td colspan="4"><center><?PHP echo $updateresult; ?></td></tr>
+</table>
 </form>
-  
+</body>
+</html>
 
 
