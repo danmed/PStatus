@@ -15,16 +15,15 @@ $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
   if (isset($_GET['doit']))
   {
-    echo "i'm in";
     $device = $_GET['device'];
     $ip = $_GET['ip'];
     $info = $_GET['info'];
     $purpose = $_GET['purpose'];
     $sql = "INSERT INTO servers (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
     if (mysqli_query($db_handle, $sql)) {
-    echo "New record created successfully";
+    $updateresult = "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($db_handle);
+    $updateresult = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
 }
     
    
@@ -38,8 +37,13 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <tr><td colspan="4"><center>Add Server</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
 <tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="info"></td><td><input type="text" size="20" name="purpose"></td></tr>
-</table>
+<tr><Td colspan="4"><input type="hidden" value="doit" name="doit">
+  <input type="submit" value="submit"><td></tr>
+  <tr><td colspan="4"><?PHP echo $updateresult; ?></td></tr>
+    </table>
 <br>
-<input type="hidden" value="doit" name="doit">
-<input type="submit" value="submit">
+
 </form>
+  
+
+
