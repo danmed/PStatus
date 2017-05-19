@@ -26,7 +26,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 </head>
 <body>
 <center>
-  <form method="serveradd.php" action="get">
+  <form method="get" action="serveradd.php">
 <table cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="4"><center>Add Server</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
