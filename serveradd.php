@@ -22,7 +22,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
     $sql = "INSERT INTO servers (device, ip, info, purpose)VALUES ($device, $ip, $info, $purpose)";
     mysqli_query($db_handle, $sql);
   }
-
+?>
 </head>
 <body>
 <center>
