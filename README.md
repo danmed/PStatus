@@ -12,7 +12,9 @@ MYSQL Database (See pstatus.sql for structure)
 
 # Done
 Add auto refresh rate
+
 Add services for each parent server
+
 Add Smart device controls
 
 # Screenshot
