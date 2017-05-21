@@ -12,13 +12,7 @@ while ($db_field = mysqli_fetch_assoc($result))
   $ip = $db_field['ip'];
 	$online  = pingtest($ip);
 	$SQL2 = "update uptime SET count = count + 1 WHERE parent = $id";
-  if (mysqli_query($db_handle, $sql2)) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . mysqli_error($conn);
-}
-
-}
+$result2 = mysqli_query($db_handle, $sql2);
 
 
 function pingtest($ip) {
