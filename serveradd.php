@@ -50,9 +50,9 @@ $db_found = mysqli_select_db($db_handle, 'status');
     $purpose = $_POST['purpose'];
     $sql = "INSERT INTO smartdevices (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
     if (mysqli_query($db_handle, $sql)) {
-    $updateresult = "New record created successfully";
+    $updateresult3 = "New record created successfully";
 } else {
-    $updateresult = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
+    $updateresult3 = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
 }
   }
 ?>
