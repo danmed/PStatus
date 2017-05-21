@@ -12,8 +12,11 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$id = $db_field['id'];
   	$ip = $db_field['ip'];
 	$SQL2 = "UPDATE uptime SET count = count + 1 WHERE parent = '$id'";
-	$result2 = mysqli_query($db_handle, $sql2);
-	echo $result2;
+if (mysqli_query($db_handle, $sql2)) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . mysqli_error($conn);
+}
 }
 }	
 	
