@@ -15,6 +15,8 @@ Need to add a row to the uptime table when a server is added.
 * Run in backgroud to build stats of uptime
 * Delete Devices etc..
 * Edit Devices etc..
+* Display uptime data including last uptime / downtime
+* Reset uptime data
 
 
 # Done
