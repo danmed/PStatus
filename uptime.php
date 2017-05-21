@@ -20,4 +20,5 @@ while ($db_field = mysqli_fetch_assoc($result))
 function pingtest($ip) {
 exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
 return $errorStr === 0;
+}
 ?>
