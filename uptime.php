@@ -13,10 +13,10 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$online  = pingtest($ip);
 	$SQL2 = "update uptime SET count = count + 1 WHERE parent = $id";
 	$result2 = mysqli_query($db_handle, $sql2);
+	echo $result2;
 }
 	
-	function pingtest($ip) {
-    
-	exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
-	return $errorStr === 0;
+function pingtest($ip) {
+exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
+return $errorStr === 0;
 ?>
