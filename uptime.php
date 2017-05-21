@@ -10,7 +10,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 {
 	$id = $db_field['id'];
   	$ip = $db_field['ip'];
-	$date = date("Y-m-d H:i:s")
+	$date = date("Y-m-d H:i:s");
 	$up = pingtest($ip);
 	$online = $up ? 'online' : 'offline';
 	if ($online == 'online'){
