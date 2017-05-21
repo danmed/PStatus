@@ -18,8 +18,9 @@ $db_found = mysqli_select_db($db_handle, 'status');
   {
     $device = $_POST['device'];
     $ip = $_POST['ip'];
+    $info = $_POST['info'];
     $purpose = $_POST['purpose'];
-    $sql = "INSERT INTO servers (device, ip, purpose) VALUES ('$device', '$ip', '$purpose')";
+    $sql = "INSERT INTO servers (device, ip, info, purpose) VALUES ('$device', '$ip', ;$info' '$purpose')";
     if (mysqli_query($db_handle, $sql)) {
     $updateresult = "New record created successfully";
 } else {
@@ -33,7 +34,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
     $port = $_POST['port'];
     $parent = $_POST['parent'];
     $info = $_POST['info'];
-    $sql = "INSERT INTO services (name, port, parent, info) VALUES ('$name', '$port', '$parent', '$info')";
+    $sql = "INSERT INTO services (name, port, parent, info) VALUES ('$name', '$port', '$parent')";
     if (mysqli_query($db_handle, $sql)) {
     $updateresult2 = "New record created successfully";
 } else {
@@ -41,7 +42,19 @@ $db_found = mysqli_select_db($db_handle, 'status');
 }
    }  
    
-
+ if (isset($_POST['addsmart']))
+  {
+    $device = $_POST['device'];
+    $ip = $_POST['ip'];
+    $info = $_POST['info'];
+    $purpose = $_POST['purpose'];
+    $sql = "INSERT INTO smartdevices (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
+    if (mysqli_query($db_handle, $sql)) {
+    $updateresult = "New record created successfully";
+} else {
+    $updateresult = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
+}
+  }
 ?>
 </head>
 <body>
@@ -84,6 +97,18 @@ while ($db_field = mysqli_fetch_assoc($result))
 <tr><td colspan="4"><center><?PHP echo $updateresult2; ?></td></tr>
 </table>
 </form>
+  <br>
+  <!-- ADD SMART DEVICE FORM -->
+<form method="POST" action="serveradd.php">
+<input type="hidden" value="addsmart" name="addsmart">
+<table cellpadding="4" cellspacing="4" border="1">
+<tr><td colspan="4"><center>Add Smart Device</td></tr>
+<tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
+<tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="info"></td><td><input type="text" size="20" name="purpose"></td></tr>
+<tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
+<tr><td colspan="4"><center><?PHP echo $updateresult3; ?></td></tr>
+</table>
+  </form>
 </body>
 </html>
 
