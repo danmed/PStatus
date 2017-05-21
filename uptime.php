@@ -14,7 +14,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	if ($online == 1){
 	$SQL2 = "UPDATE uptime SET count = count + 1, ups = ups + 1 WHERE parent = '" . $id . "'";
 	}
-	else
+	elseif
 	{
 	$SQL2 = "UPDATE uptime SET count = count + 1, downs = downs + 1 WHERE parent = '" . $id . "'";
 	}
