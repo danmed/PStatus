@@ -13,7 +13,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	if ($pingtest($ip)){
 	$SQL2 = "UPDATE uptime SET count = count + 1, ups = ups + 1 WHERE parent = '" . $id . "'";
 	}
-	elseif
+	else
 	{
 	$SQL2 = "UPDATE uptime SET count = count + 1, downs = downs + 1 WHERE parent = '" . $id . "'";
 	}
