@@ -10,8 +10,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 {
 	$id = $db_field['id'];
   	$ip = $db_field['ip'];
-	$online  = pingtest($ip);
-	if ($online == 1){
+	if ($pingtest($ip)){
 	$SQL2 = "UPDATE uptime SET count = count + 1, ups = ups + 1 WHERE parent = '" . $id . "'";
 	}
 	elseif
