@@ -10,14 +10,15 @@ while ($db_field = mysqli_fetch_assoc($result))
 {
 	$id = $db_field['id'];
   	$ip = $db_field['ip'];
+	$date = date("Y-m-d H:i:s")
 	$up = pingtest($ip);
 	$online = $up ? 'online' : 'offline';
 	if ($online == 'online'){
-	$SQL2 = "UPDATE uptime SET count = count + 1, ups = ups + 1 WHERE parent = '" . $id . "'";
+	$SQL2 = "UPDATE uptime SET count = count + 1, ups = ups + 1, lastup = '" . $date . "' WHERE parent = '" . $id . "'";
 	}
 	else
 	{
-	$SQL2 = "UPDATE uptime SET count = count + 1, downs = downs + 1 WHERE parent = '" . $id . "'";
+	$SQL2 = "UPDATE uptime SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE parent = '" . $id . "'";
 	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
