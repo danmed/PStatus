@@ -10,6 +10,12 @@ MYSQL Database (See pstatus.sql for structure)
 
 19.05.17 - Admin page : So far you can add a server and a service.. the rest needs to be done in SQL at the moment
 
+# Planned
+* Run in backgroud to build stats of uptime
+* Delete Devices etc..
+* Edit Devices etc..
+
+
 # Done
 * Add auto refresh rate
 * Add services for each parent server
