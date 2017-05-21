@@ -6,6 +6,8 @@ Web server running PHP (7 is tested.. 5 should work fine)
 
 MYSQL Database (See pstatus.sql for structure)
 
+uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/html/status/uptime.php
+
 # WIP
 
 21.05.17 - Admin page : So far you can add a server, smart device and a service.. the rest needs to be done in SQL at the moment.
