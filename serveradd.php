@@ -33,8 +33,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
     $name = $_POST['name'];
     $port = $_POST['port'];
     $parent = $_POST['parent'];
-    $info = $_POST['info'];
-    $sql = "INSERT INTO services (name, port, parent, info) VALUES ('$name', '$port', '$parent')";
+    $sql = "INSERT INTO services (name, port, parent) VALUES ('$name', '$port', '$parent')";
     if (mysqli_query($db_handle, $sql)) {
     $updateresult2 = "New record created successfully";
 } else {
