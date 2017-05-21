@@ -1,3 +1,4 @@
+1
 <?PHP
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
