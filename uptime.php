@@ -1,4 +1,3 @@
-1
 <?PHP
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
@@ -15,7 +14,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 if (mysqli_query($db_handle, $sql2)) {
     echo "Record updated successfully";
 } else {
-    echo "Error updating record: " . mysqli_error($conn);
+    echo "Error updating record: " . mysqli_error($db_handle);
 }
 }
 }	
