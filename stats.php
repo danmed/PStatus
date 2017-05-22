@@ -1,4 +1,3 @@
-<html>
 <?PHP
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
@@ -13,12 +12,14 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$count = $db_field['count'];
 	$ups = $db_field['ups'];
 	$downs = $db_field['downs'];
-  $lastup = $db_field['lastup'];
-  $lastdown = $db_field['lastdown'];
+  	$lastup = $db_field['lastup'];
+  	$lastdown = $db_field['lastdown'];
 	$value = $ups;
 	$max = $count;
  }
+}
  ?>
+<html>
 <head>
 <title>
 PStatus Statistics
