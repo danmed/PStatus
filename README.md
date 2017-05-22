@@ -11,7 +11,6 @@ uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/
 # WIP
 
 21.05.17 - Admin page : So far you can add a server, smart device and a service.. the rest needs to be done in SQL at the moment.
-Need to add a row to the uptime table when a server is added.
 
 # Planned
 * Delete Devices etc..
