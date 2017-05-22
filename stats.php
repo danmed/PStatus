@@ -34,9 +34,9 @@ PStatus Statistics
 <script>
   var g = new JustGage({
     id: "gauge",
-    value: <?PHP echo $ups; ?>,
+    value: <?PHP echo $value; ?>,
     min: 0,
-    max: <?PHP echo $count; ?>,
+    max: <?PHP echo $max; ?>,
     title: "<?PHP echo $device; ?>",
 	  levelColorsGradient: false
   });
