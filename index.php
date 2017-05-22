@@ -76,7 +76,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 
 ?>
 <tr><td colspan="5"><center><b>Smart Device Ping Status</td></tr>
-<tr><td><b>DEVICE</td><td><b>INFO</td><td><b colspan="2">PURPOSE</td><td><b>STATUS</td></tr>
+<tr><td><b>DEVICE</td><td><b>INFO</td><td colspan="2"><b>PURPOSE</td><td><b>STATUS</td></tr>
 <?PHP
 
 $SQL = "select * from smartdevices"	;
