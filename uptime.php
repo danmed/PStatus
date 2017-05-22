@@ -27,6 +27,29 @@ if (mysqli_query($db_handle, $SQL2)) {
     echo "Error updating record: " . mysqli_error($db_handle);
 }
 }
+	$SQL3 = "select * from services";
+$result = mysqli_query($db_handle, $SQL3);
+while ($db_field = mysqli_fetch_assoc($result))
+{
+	$id = $db_field['id'];
+  	$ip = $db_field['ip'];
+	$date = date("Y-m-d H:i:s");
+	$up = pingtest($ip);
+	$online = $up ? 'online' : 'offline';
+	if ($online == 'online'){
+	$SQL4 = "UPDATE services SET count = count + 1, ups = ups + 1, lastup = '" . $date . "' WHERE id = '" . $id . "'";
+	}
+	else
+	{
+	$SQL4 = "UPDATE services SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
+	}
+	
+if (mysqli_query($db_handle, $SQL4)) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . mysqli_error($db_handle);
+}
+}
 }	
 	function pingtest($ip) {
     
