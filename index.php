@@ -70,8 +70,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	if ( !empty($max) ) { $percent = ($value * 100) / $max; } 
 	else { $percent = 0; }
 	if ( $percent > 100 ) { $percent = 100; }
-echo $percent;
-	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class='percentbar' style='width:<?php echo round(100 * $scale); ?>px;'><div style='width:<?php echo round($percent * $scale); ?>px;'><?php echo $percent; ?></div></div></td></tr>";
+	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><PHP echo $percent; ?>%</td></tr>";
 }
 
 ?>
