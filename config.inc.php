@@ -6,13 +6,13 @@ $DBUser		= 	'kodi';
 $DBPassword     = 	'kodi';
 
 /* Default refresh rate for index page */
-$Refresh = '20';
+$refresh = '20';
 
 /* Email Configuration */
-$smtp = "smtp.gmail.com";
-$port = "587";
-$username = "testtest@gmail.com";
-$password = "testtest";
-$adminemail = "admin@yourdomain.com";
+$smtp = 'smtp.gmail.com';
+$port = '587';
+$username = 'testtest@gmail.com';
+$password = 'testtest';
+$adminemail = 'admin@yourdomain.com';
 
 ?>
