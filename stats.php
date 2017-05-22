@@ -24,10 +24,10 @@ while ($db_field = mysqli_fetch_assoc($result))
 <title>
 PStatus Statistics
 </title>
-<script src="raphael.2.1.0.min.js"></script>
-<script src="justgage.1.0.1.min.js"></script>
 </head>
 <body>
+<script src="raphael.2.1.0.min.js"></script>
+<script src="justgage.1.0.1.min.js"></script>
 <div id="gauge" class="200x160px"></div>
 <script>
   var g = new JustGage({
