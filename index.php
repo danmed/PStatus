@@ -6,7 +6,9 @@ if (isset($_GET['refresh']))
 {
 $refresh = $_GET['refresh'];
 }
+	echo $refresh;
 	    ?>
+	
 <head>
 <meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
 <title>
