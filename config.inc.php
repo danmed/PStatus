@@ -13,5 +13,6 @@ $smtp = "smtp.gmail.com";
 $port = "587";
 $username = "testtest@gmail.com";
 $password = "testtest";
+$adminemail = "admin@yourdomain.com";
 
 ?>
