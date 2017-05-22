@@ -75,7 +75,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 
 ?>
 <tr><td colspan="5"><center><b>Smart Device Ping Status</td></tr>
-<tr><td><b>DEVICE</td><td><b>INFO</td><td colspan="2"><b>PURPOSE</td><td><b>STATUS</td></tr>
+<tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td></tr>
 <?PHP
 
 $SQL = "select * from smartdevices"	;
@@ -88,9 +88,18 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$port = $db_field['port'];
 	$info = $db_field['info'];
 	$purpose = $db_field['purpose'];
+	$count = $db_field['count'];
+	$ups = $db_field['ups'];
+	$downs = $db_field['downs'];
 	$online  = pingtest($ip);
+	$value = $ups;
+	$max = $count;
+	$scale = 1.0;
+	if ( !empty($max) ) { $percent = ($value * 100) / $max; } 
+	else { $percent = 0; }
+	if ( $percent > 100 ) { $percent = 100; }
 
-	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td colspan='2'>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td></tr>";
+	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td colspan='2'>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class='percentbar' style='width:". round(100 * $scale) ."px;'><div style='width:" . round($percent * $scale) ."px;'><Center><font size='1'>" . round($percent * $scale) . "%</div></div></td></tr>";
 }
 
 mysqli_close($db_handle);
