@@ -31,8 +31,14 @@ PStatus Statistics
 <script src="raphael-2.1.4.min.js"></script>
 <script src="justgage.js"></script>
 <div id="gauge" class="200x160px"></div>
-	<pre class="conf">
-      customSectors: {
+<script>
+  var g = new JustGage({
+    id: "gauge",
+    value: <?PHP echo $value; ?>,
+    min: 0,
+    max: <?PHP echo $max; ?>,
+    title: "<?PHP echo $device; ?>",
+	  customSectors: {
         percents: true,
         ranges: [{
           color : "#43bf58",
@@ -43,14 +49,6 @@ PStatus Statistics
           lo : 51,
           hi : 100
         }]
-      }
-    </pre>
-<script>
-  var g = new JustGage({
-    id: "gauge",
-    value: <?PHP echo $value; ?>,
-    min: 0,
-    max: <?PHP echo $max; ?>,
-    title: "<?PHP echo $device; ?>",
+      },
       });
 </script>
