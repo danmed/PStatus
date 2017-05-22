@@ -31,6 +31,20 @@ PStatus Statistics
 <script src="raphael-2.1.4.min.js"></script>
 <script src="justgage.js"></script>
 <div id="gauge" class="200x160px"></div>
+	<pre class="conf">
+      customSectors: {
+        percents: true,
+        ranges: [{
+          color : "#43bf58",
+          lo : 0,
+          hi : 50
+        },{
+          color : "#ff3b30",
+          lo : 51,
+          hi : 100
+        }]
+      }
+    </pre>
 <script>
   var g = new JustGage({
     id: "gauge",
