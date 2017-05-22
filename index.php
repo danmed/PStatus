@@ -20,6 +20,8 @@ body
 {
 font-family:courier,serif
 }
+.percentbar { background:#CCCCCC; border:1px solid #666666; height:10px; }
+.percentbar div { background: #28B8C0; height: 10px; }
 </style>
 	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
@@ -58,9 +60,22 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$port = $db_field['port'];
 	$info = $db_field['info'];
 	$purpose = $db_field['purpose'];
+	$count = $db_field['count'];
+	$ups = $db_field['ups'];
+	$downs = $db_field['downs'];
 	$online  = pingtest($ip);
+	$value = $ups;
+	$max = $count;
+	$scale = 1.0;
+	if ( !empty($max) ) { $percent = ($value * 100) / $max; } 
+	else { $percent = 0; }
+	if ( $percent > 100 ) { $percent = 100; }
 
-	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td></tr>";
+	
+
+	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class="percentbar" style="width:<?php echo round(100 * $scale); ?>px;">
+	<div style="width:<?php echo round($percent * $scale); ?>px;"></div>
+</div></td></tr>";
 }
 
 ?>
