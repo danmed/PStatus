@@ -35,7 +35,7 @@ PStatus Statistics
     value: <?PHP echo $ups; ?>,
     min: 0,
     max: <?PHP echo $count; ?>,
-    title: <?PHP echo $device; ?>,
+    title: "<?PHP echo $device; ?>",
 	  levelColorsGradient: false
   });
 </script>
