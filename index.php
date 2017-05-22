@@ -91,7 +91,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$purpose = $db_field['purpose'];
 	$online  = pingtest($ip);
 
-	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td></tr>";
+	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td colspan='2'>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td></tr>";
 }
 
 mysqli_close($db_handle);
