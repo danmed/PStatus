@@ -14,8 +14,10 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$downs = $db_field['downs'];
   	$lastup = $db_field['lastup'];
   	$lastdown = $db_field['lastdown'];
-	$value = $ups;
-	$max = $count;
+	$value = $ups / $count;
+	$value = $value * 100;
+	$max = "100";
+	
  }
 }
  ?>
