@@ -28,12 +28,15 @@ uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/
 # Screenshot
 
 Main Page
+
 ![Alt text](/../screenshots/pstatus.png?raw=true "Main Screen")
 
 Service Page
+
 ![Alt text](/../screenshots/pstatus2.png?raw=true "Service Screen")
 
 Admin Page
+
 ![Alt text](/../screenshots/pstatus3.png?raw=true "Service Screen")
 
 # Credit 
