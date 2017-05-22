@@ -26,6 +26,9 @@ PStatus Statistics
 </title>
 <script src="raphael.2.1.0.min.js"></script>
 <script src="justgage.1.0.1.min.js"></script>
+</head>
+<body>
+<div id="gauge" class="200x160px"></div>
 <script>
   var g = new JustGage({
     id: "gauge",
@@ -35,6 +38,3 @@ PStatus Statistics
     title: "Visitors"
   });
 </script>
-</head>
-<body>
-<div id="gauge" class="200x160px"></div>
