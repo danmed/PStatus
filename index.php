@@ -99,7 +99,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else { $percent = 0; }
 	if ( $percent > 100 ) { $percent = 100; }
 
-	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td colspan='2'>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class='percentbar' style='width:". round(100 * $scale) ."px;'><div style='width:" . round($percent * $scale) ."px;'><Center><font size='1'>" . round($percent * $scale) . "%</div></div></td></tr>";
+	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class='percentbar' style='width:". round(100 * $scale) ."px;'><div style='width:" . round($percent * $scale) ."px;'><Center><font size='1'>" . round($percent * $scale) . "%</div></div></td></tr>";
 }
 
 mysqli_close($db_handle);
