@@ -20,8 +20,8 @@ body
 {
 font-family:courier,serif
 }
-.percentbar { background:#CCCCCC; border:1px solid #666666; height:10px; }
-.percentbar div { background: #28B8C0; height: 10px; }
+.percentbar { background:#CCCCCC; border:1px solid #00ff00; height:10px; }
+.percentbar div { background: #ff0000; height: 10px; }
 </style>
 	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
