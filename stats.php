@@ -41,11 +41,11 @@ PStatus Statistics
 	  customSectors: {
         percents: true,
         ranges: [{
-          color : "#43bf58",
+          color : "#ff3b30",
           lo : 0,
           hi : 50
         },{
-          color : "#ff3b30",
+          color : "#00ff00",
           lo : 51,
           hi : 100
         }]
