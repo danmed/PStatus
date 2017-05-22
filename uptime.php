@@ -14,11 +14,11 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$up = pingtest($ip);
 	$online = $up ? 'online' : 'offline';
 	if ($online == 'online'){
-	$SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, lastup = '" . $date . "' WHERE parent = '" . $id . "'";
+	$SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, lastup = '" . $date . "' WHERE id = '" . $id . "'";
 	}
 	else
 	{
-	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE parent = '" . $id . "'";
+	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
 	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
