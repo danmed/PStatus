@@ -1,7 +1,7 @@
 <html>
 <?PHP
 include "config.inc.php";
-$refresh = $_GET['refresh'];
+
 if (isset($_GET['refresh'])) 
 {
 $refresh = $_GET['refresh'];
