@@ -24,8 +24,8 @@ while ($db_field = mysqli_fetch_assoc($result))
 <title>
 PStatus Statistics
 </title>
-<script src="gage/raphael.2.1.0.min.js"></script>
-<script src="gage/justgage.1.0.1.min.js"></script>
+<script src="raphael.2.1.0.min.js"></script>
+<script src="justgage.1.0.1.min.js"></script>
 <script>
   var g = new JustGage({
     id: "gauge",
