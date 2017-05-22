@@ -14,7 +14,6 @@ uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/
 Need to add a row to the uptime table when a server is added.
 
 # Planned
-* Run in backgroud to build stats of uptime
 * Delete Devices etc..
 * Edit Devices etc..
 * Display uptime data including last uptime / downtime
@@ -25,6 +24,7 @@ Need to add a row to the uptime table when a server is added.
 * Add auto refresh rate
 * Add services for each parent server
 * Add Smart device controls
+* Run in backgroud to build stats of uptime
 
 # Screenshot
 
