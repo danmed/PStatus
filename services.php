@@ -29,7 +29,7 @@ $(document).ready(function(){
 <Center>
 
 <table id="status" cellpadding="4" cellspacing="4" border="1">
-<tr><td colspan="4"><center><b>Service Ping Status for <?PHP echo $device; ?></td></tr>
+<tr><td colspan="4"><center><b><img src="icons/003-window.png">&nbsp;Service Ping Status for <?PHP echo $device; ?></td></tr>
 <tr><td><b>DEVICE</td><td><b>PORT</td><td><b>STATUS</td></tr>
 <?PHP
 
