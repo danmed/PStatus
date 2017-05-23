@@ -1,51 +1,95 @@
-<html>
+<!DOCTYPE html>
 <?PHP
 include "config.inc.php";
-
 if (isset($_GET['refresh'])) 
 {
 $refresh = $_GET['refresh'];
 }
 ?>
-	
-<head>
-<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
-<title>
-PStatus
-</title>
-<style>
-
-body
-{
-font-family:courier,serif
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
+    <title>PStatus</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+  .progress {
+    margin-bottom: 0 !important;
+	background-color: #DA2A2A;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
-.percentbar { background:#ff0000; border:1px solid #000000; height:10px; }
-.percentbar div { background: #00ff00; height: 10px; }
+
 </style>
-	
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
-<script type="text/javascript">
+	</head>
+
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="icons/pstatus_logo_small.png"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">About</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Refresh<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="index.php?refresh=5">5 seconds</a></li>
+						<li><a href="index.php?refresh=10">10 seconds</a></li>
+						<li><a href="index.php?refresh=15">15 seconds</a></li>
+						<li><a href="index.php?refresh=20">20 seconds</a></li>
+						<li><a href="index.php?refresh=25">25 seconds</a></li>
+						<li><a href="index.php?refresh=30">30 seconds</a></li>
+						<li><a href="index.php?refresh=35">35 seconds</a></li>
+						<li><a href="index.php?refresh=40">40 seconds</a></li>
+						<li><a href="index.php?refresh=45">45 seconds</a></li>
+						<li><a href="index.php?refresh=50">50 seconds</a></li>
+						<li><a href="index.php?refresh=55">55 seconds</a></li>
+						<li><a href="index.php?refresh=60">60 seconds</a></li>
+					</ul>
+				</li>
+				<li><a href="serveradd.php">Admin</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
 
 $(document).ready(function(){
-    $("#status td.on_off:contains('offline')").css('background-color','#ff0000');
-	$("#status td.on_off:contains('online')").css('background-color','#00ff00');
+    $("#status td.on_off:contains('offline')").css('background-color','#E05667');
+	$("#status td.on_off:contains('online')").css('background-color','#56E08E');
 });
 
 </script>
-</head>
-<body>
-
-
-<Center><form method="GET" name="refr" action="<?php echo $_SERVER['PHP_SELF'];?>">
-<table cellpadding="4" cellspacing="4" border="1">
-	<tr>
-		<td><img src="icons/001-wrench-tool.png">&nbsp;<a href="addservers.php">Admin</a></td><td><img src="icons/pstatus_logo_small.png"></td><td><img src="icons/002-arrows.png">&nbsp;<select name="refresh" value="refresh" onchange="this.form.submit()"><option>refresh</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option></td></tr></table></form><br>
+<center>
+<div class="container">
 	
-<table id="status" cellpadding="4" cellspacing="4" border="1">
-<tr><td colspan="5"><center><b><img src="icons/005-computer-screen.png" width="16" height="16">&nbsp;Server Ping Status</td></tr>
-	<tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td><td><b>UPTIME</td></tr>
+	<table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
+	<thead>
+	<tr><th colspan="5"><center><b><img src="icons/005-computer-screen.png" width="16" height="16">&nbsp;Server Ping Status</th></tr>
+	<tr><th><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
+	</thead>
+	<tbody>
 <?PHP
-include "config.inc.php";
+
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 
@@ -71,13 +115,15 @@ while ($db_field = mysqli_fetch_assoc($result))
 	if ( !empty($max) ) { $percent = ($value * 100) / $max; } 
 	else { $percent = 0; }
 	if ( $percent > 100 ) { $percent = 100; }
-	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class='percentbar' style='width:". round(100 * $scale) ."px;'><div style='width:" . round($percent * $scale) ."px;'><Center><font size='1'>" . round($percent * $scale) . "%</div></div></td></tr>";
+	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'><Center>" . ($online ? 'online':'offline') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
 }
 
 ?>
-<tr><td colspan="5"><center><b><img src="icons/003-networking.png">&nbsp;Smart Device Ping Status</td></tr>
-	<tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td><td><b>UPTIME</td></tr>
-<?PHP
+<thead>
+<tr><th colspan="5"><center><b><img src="icons/003-networking.png">&nbsp;Smart Device Ping Status</th></tr>
+	<tr><th><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
+</thead>
+	<?PHP
 
 $SQL = "select * from smartdevices"	;
 $result = mysqli_query($db_handle, $SQL);
@@ -100,7 +146,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else { $percent = 0; }
 	if ( $percent > 100 ) { $percent = 100; }
 
-	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'>" . ($online ? 'online':'offline') . "</td><td><div class='percentbar' style='width:". round(100 * $scale) ."px;'><div style='width:" . round($percent * $scale) ."px;'><Center><font size='1'>" . round($percent * $scale) . "%</div></div></td></tr>";
+	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'><center>" . ($online ? 'online':'offline') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div><div></td></tr>";
 }
 
 mysqli_close($db_handle);
@@ -133,6 +179,5 @@ function showPage() {
 	</table>
 	<br>
 	<?PHP include "footer.php"; ?>
-
-	</body>
-	</html>
+  </body>
+</html>
