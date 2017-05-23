@@ -36,7 +36,7 @@ $(document).ready(function(){
 <Center><form method="GET" name="refr" action="<?php echo $_SERVER['PHP_SELF'];?>">
 <table cellpadding="4" cellspacing="4" border="1">
 	<tr>
-		<td><a href="serveradd.php">Admin</a></td><td><?PHP echo date('Y-m-d H:i:s');; ?></td><td><select name="refresh" value="refresh" onchange="this.form.submit()"><option>refresh</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option></td></tr></table></form><br>
+		<td><img src="icons/001-wrench-tool.png">&nbsp;<a href="serveradd.php">Admin</a></td><td><?PHP echo date('Y-m-d H:i:s');; ?></td><td><img src="icons/003-arrows.png">&nbsp;<select name="refresh" value="refresh" onchange="this.form.submit()"><option>refresh</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option></td></tr></table></form><br>
 	
 <table id="status" cellpadding="4" cellspacing="4" border="1">
 <tr><td colspan="5"><center><b><img src="icons/005-computer-screen.png" width="16" height="16">&nbsp;Server Ping Status</td></tr>
