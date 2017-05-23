@@ -62,7 +62,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addserver" name="addserver">
 <table cellpadding="4" cellspacing="4" border="1">
-<tr><td colspan="4"><center>Add Server</td></tr>
+<tr><td colspan="4"><center><img src="icons/005-computer-screen.png">&nbsp;Add Server</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
 <tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="info"></td><td><input type="text" size="20" name="purpose"></td></tr>
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
@@ -74,7 +74,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addservice" name="addservice">
 <table cellpadding="3" cellspacing="4" border="1">
-<tr><td colspan="4"><center>Add Service</td></tr>
+<tr><td colspan="4"><center><img src="icons/001-window.png">&nbsp;Add Service</td></tr>
   <tr><td>Name</td><td>Port</td><td>Parent</td></tr>
 <tr><td><input type="text" size="20" name="name"></td><td><input type="text" size="20" name="port"></td><td>
 <select name="parent">
@@ -101,7 +101,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addsmart" name="addsmart">
 <table cellpadding="4" cellspacing="4" border="1">
-<tr><td colspan="4"><center>Add Smart Device</td></tr>
+<tr><td colspan="4"><center><img src="icons/003-networking.png">&nbsp;Add Smart Device</td></tr>
 <tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
 <tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="info"></td><td><input type="text" size="20" name="purpose"></td></tr>
 <tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
