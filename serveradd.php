@@ -58,6 +58,10 @@ $db_found = mysqli_select_db($db_handle, 'status');
 </head>
 <body>
 <center>
+  <table cellpadding="4" cellspacing="4" border="1">
+	<tr><td><img src="icons/006-house-outline.png">&nbsp;<a href="index.php">Home</a></td></tr>
+  </table>
+  <br>
 <!-- ADD SERVER FORM -->
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addserver" name="addserver">
