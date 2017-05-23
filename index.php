@@ -57,7 +57,7 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="navbar">
- <img src="icons/pstatus_logo_small.png">
+	<a><img src="icons/pstatus_logo_small.png"></a>
   <a href="addservers.php">Add Servers</a>
   <a href="#contact">Contact</a>
 </div>
