@@ -39,7 +39,7 @@ $(document).ready(function(){
 		<td><a href="serveradd.php">Admin</a></td><td><?PHP echo date('Y-m-d H:i:s');; ?></td><td><select name="refresh" value="refresh" onchange="this.form.submit()"><option>refresh</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option></td></tr></table></form><br>
 	
 <table id="status" cellpadding="4" cellspacing="4" border="1">
-<tr><td colspan="5"><center><b>Server Ping Status</td></tr>
+<tr><td colspan="5"><center><b><img src="icons/005-computer-screen.png">&nbsp;Server Ping Status</td></tr>
 	<tr><td><b>DEVICE</td><td><b>INFO</td><td><b>PURPOSE</td><td><b>STATUS</td><td><b>UPTIME</td></tr>
 <?PHP
 include "config.inc.php";
