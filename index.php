@@ -129,6 +129,6 @@ function showPage() {
 	
 	</table>
 	<br>
-	include "footer.php";
+	<?PHP include "footer.php"; ?>
 	</body>
 	</html>
