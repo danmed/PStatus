@@ -14,7 +14,29 @@ $refresh = $_GET['refresh'];
 PStatus
 </title>
 <style>
+/* The navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
 
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Main content */
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
 body
 {
 font-family:courier,serif
@@ -34,6 +56,13 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<div>
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="main">
 
 <Center><form method="GET" name="refr" action="<?php echo $_SERVER['PHP_SELF'];?>">
 <table cellpadding="4" cellspacing="4" border="1">
@@ -132,6 +161,6 @@ function showPage() {
 	</table>
 	<br>
 	<?PHP include "footer.php"; ?>
-
+	</div>
 	</body>
 	</html>
