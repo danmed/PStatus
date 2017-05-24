@@ -69,7 +69,7 @@ while ($db_field = mysqli_fetch_assoc($result))
  ?>
 <!-- Modal -->
 <?php if($show_modal):?>
-  <script> $('#myModal').modal('show');</script>
+  <script type='text/javascript'>$('#myModal').modal('show');</script>
 <?php endif;?>
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
