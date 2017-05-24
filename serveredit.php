@@ -12,7 +12,9 @@ if (mysqli_query($db_handle, $SQLRESET)) {
 	} else {
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
 }
+	?>
 	<script> $('#myModal').modal('show');</script>
+<?PHP
 }
 	
 ?>
