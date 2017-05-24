@@ -60,8 +60,8 @@
 <div class="container">
 <table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
+		<tr><th colspan="6"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
 		<tr><th><b>DEVICE</th><th><b>IP</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th></tr>
-		<tr><th colspan="4"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
 </thead>
 		<tbody>
 <?PHP
