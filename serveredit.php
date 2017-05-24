@@ -95,8 +95,8 @@ while ($db_field = mysqli_fetch_assoc($result))
 <tr><th colspan="4"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Server</th></tr>
 </thead>
 <tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update></td><td>RESET</td></tr>
-</table>
+
   </form>
  }
- 
+ }
  ?>
