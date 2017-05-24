@@ -85,3 +85,8 @@ mysqli_close($db_handle);
 
 ?>
 
+	</table>
+	<?PHP include "aboutmodal.php"; ?>
+	<?PHP include "footer.php"; ?>
+	</body>
+	</html>
