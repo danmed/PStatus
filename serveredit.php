@@ -60,10 +60,10 @@
 <div class="container">
 <table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
-	<tr><th colspan="5"><center><b><img src="icons/005-computer-screen.png" width="16" height="16">&nbsp;Server Ping Status</th></tr>
-	<tr><th><b>DEVICE</th><th><b>IP</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th></tr>
-	</thead>
-	<tbody>
+		<tr><th><b>DEVICE</th><th><b>IP</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th></tr>
+		<tr><th colspan="4"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
+</thead>
+		<tbody>
 <?PHP
 include "config.inc.php";
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
@@ -83,10 +83,6 @@ while ($db_field = mysqli_fetch_assoc($result))
  ?>
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="updateserver" name="<?PHP echo $id; ?>">
-<table class="table" cellpadding="4" cellspacing="4" border="1">
-<thead>
-<tr><th colspan="4"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Server</th></tr>
-</thead>
 <tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update></td><td>RESET</td></tr>
 
   </form>
