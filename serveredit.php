@@ -59,9 +59,6 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$info = $db_field['info'];
 	$purpose = $db_field['purpose'];
  ?>
-<?php if($show_modal):?>
- <script type='text/javascript'>$("#myModal").modal("show")</script>
-<?php endif;?>
 
 <form method="POST" action="serveredit.php">
 <input type="hidden" value="updateserver" name="<?PHP echo $id; ?>">
@@ -71,6 +68,11 @@ while ($db_field = mysqli_fetch_assoc($result))
  }
  }
  ?>
+	
+<?php if($show_modal):?>
+<script type='text/javascript'>$("#myModal").modal("show")</script>
+<?php endif;?>
+	
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
