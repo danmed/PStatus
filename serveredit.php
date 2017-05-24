@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?PHP include "config.inc.php"; 
 	
-if (isset $_POST['reset']) 
+if (isset($_POST['reset'])) 
 {
 $resetid = $_POST['reset'];	
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
