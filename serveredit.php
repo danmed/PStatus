@@ -99,5 +99,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 
   </div>
 </div>
+	<?PHP include "aboutmodal.php"; ?>
+	<?PHP include "footer.php"; ?>
 	</body>
 	</html>
