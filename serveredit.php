@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <?PHP
-include "config.inc.php"; 
-	
-if (isset($_POST['reset'])) 
-{
-$resetid = $_POST['reset'];	
-$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
-$db_found = mysqli_select_db($db_handle, 'status');
-$SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
-if (mysqli_query($db_handle, $SQLRESET)) {
-    $OUTPUT = "Uptime Count reset to 0";
-	} else {
-    $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
-}
-?>
-<script>$('#myModal').modal('show');</script>
-<?PHP
-}
-endif
-	
-?>
-	  <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PStatus</title>
@@ -51,6 +30,24 @@ endif
 		<tbody>
 <?PHP
 
+include "config.inc.php"; 
+	
+if (isset($_POST['reset'])) 
+{
+$resetid = $_POST['reset'];	
+$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
+$db_found = mysqli_select_db($db_handle, 'status');
+$SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
+if (mysqli_query($db_handle, $SQLRESET)) {
+    $OUTPUT = "Uptime Count reset to 0";
+	} else {
+    $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
+}
+?>
+<script>$('#myModal').modal('show');</script>
+<?PHP
+}
+endif
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 if ($db_found) 
