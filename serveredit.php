@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?PHP include "config.inc.php"; 
+<html lang="en">
+  <head>
+    <?PHP
+include "config.inc.php"; 
 	
 if (isset($_POST['reset'])) 
 {
@@ -12,15 +15,14 @@ if (mysqli_query($db_handle, $SQLRESET)) {
 	} else {
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
 }
-	?>
-	<script> $('#myModal').modal('show');</script>
+?>
+<script>$('#myModal').modal('show');</script>
 <?PHP
 }
+endif
 	
 ?>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+	  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PStatus</title>
