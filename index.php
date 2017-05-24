@@ -144,5 +144,6 @@ function showPage() {
 	</table>
 	<br>
 	<?PHP include "footer.php"; ?>
+	<?PHP include "aboutmodal.php"; ?>
   </body>
 </html>
