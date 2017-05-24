@@ -17,7 +17,7 @@
   <?PHP include "navbar.php"; ?>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
 <center>
@@ -60,7 +60,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$purpose = $db_field['purpose'];
  ?>
 <?php if($show_modal):?>
- <script type='text/javascript'>$('#myModal').modal('show')</script>
+ <script type='text/javascript'>$("#myModal").modal("show")</script>
 <?php endif;?>
 
 <form method="POST" action="serveredit.php">
