@@ -34,6 +34,7 @@ if (isset($_POST['reset']))
 {
 $resetid = $_POST['reset'];
 $show_modal = true;
+$date = date("Y-m-d H:i:s");
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 $SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
