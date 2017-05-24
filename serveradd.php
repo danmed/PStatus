@@ -144,6 +144,7 @@ while ($db_field = mysqli_fetch_assoc($result))
   </form>
   <br>
   <?PHP include "footer.php"; ?>
+	<?PHP include "aboutmodal.php"; ?>
 </body>
 </html>
 
