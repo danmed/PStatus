@@ -33,7 +33,7 @@ include "config.inc.php";
 if (isset($_POST['reset'])) 
 {
 $resetid = $_POST['reset'];
-$showmodal = "true";
+$show_modal = true;
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 $SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
