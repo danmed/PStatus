@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?PHP include "config.inc.php"; ?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -65,7 +66,7 @@
 </thead>
 		<tbody>
 <?PHP
-include "config.inc.php";
+
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 if ($db_found) 
@@ -81,11 +82,10 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$info = $db_field['info'];
 	$purpose = $db_field['purpose'];
  ?>
-<form method="POST" action="serveradd.php">
+<form method="POST" action="serveredit.php">
 <input type="hidden" value="updateserver" name="<?PHP echo $id; ?>">
 <tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update"></td><td>RESET</td></tr>
-
-  </form>
+</form>
 <?PHP
  }
  }
