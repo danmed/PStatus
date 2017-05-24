@@ -70,7 +70,9 @@ while ($db_field = mysqli_fetch_assoc($result))
  }
  }
  ?>
-	
+	</table>
+		<?PHP include "aboutmodal.php"; ?>
+	<?PHP include "footer.php"; ?>
 <?php if($show_modal):?>
 	<script type='text/javascript'>
 	$(document).ready(function(){
@@ -99,7 +101,6 @@ while ($db_field = mysqli_fetch_assoc($result))
 
   </div>
 </div>
-	<?PHP include "aboutmodal.php"; ?>
-	<?PHP include "footer.php"; ?>
+
 	</body>
 	</html>
