@@ -39,8 +39,10 @@ $db_found = mysqli_select_db($db_handle, 'status');
 $SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
 if (mysqli_query($db_handle, $SQLRESET)) {
     $OUTPUT = "Uptime Count reset to 0";
+	echo "<script type='text/javascript'>$('#myModal').modal('show');</script>";
 	} else {
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
+	echo "<script type='text/javascript'>$('#myModal').modal('show');</script>";
 }
 }
 
