@@ -39,20 +39,10 @@ $db_found = mysqli_select_db($db_handle, 'status');
 $SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
 if (mysqli_query($db_handle, $SQLRESET)) {
     $OUTPUT = "Uptime Count reset to 0";
-	echo "<script type='text/javascript'>";
-	echo "$(document).ready(function(){";
-	echo "$('#myModal').modal('show');";
-	echo "});";
-	echo "</script>";
 	} 
 	else 
 	{
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
-	echo "<script type='text/javascript'>";
-	echo "$(document).ready(function(){";
-	echo "$('#myModal').modal('show');";
-	echo "});";
-	echo "</script>";
 }
 }
 
@@ -82,7 +72,11 @@ while ($db_field = mysqli_fetch_assoc($result))
  ?>
 	
 <?php if($show_modal):?>
-<script type='text/javascript'>$("#myModal").modal("show");</script>
+	<script type='text/javascript'>
+	$(document).ready(function(){
+	$('#myModal').modal('show');
+	});
+	</script>
 <?php endif;?>
 	
 <!-- Modal -->
