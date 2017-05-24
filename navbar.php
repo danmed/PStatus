@@ -29,7 +29,14 @@
 						<li><a href="index.php?refresh=60">60 seconds</a></li>
 					</ul>
 				</li>
-				<li><a href="serveradd.php">Admin</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="serveradd.php">Add Devices</a></li>
+						<li><a href="serveredit.php">Edit Devices</a></li>
+
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>
