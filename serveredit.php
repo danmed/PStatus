@@ -96,7 +96,7 @@ while ($db_field = mysqli_fetch_assoc($result))
         <h4 class="modal-title">PStatus - Action Result</h4>
       </div>
       <div class="modal-body">
-        <p><?PHP echo $RESETRESULT; ?></p>
+        <p><?PHP echo $OUTPUT; ?></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
