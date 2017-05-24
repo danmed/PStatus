@@ -29,9 +29,7 @@
 </thead>
 		<tbody>
 <?PHP
-
 include "config.inc.php"; 
-	
 if (isset($_POST['reset'])) 
 {
 $resetid = $_POST['reset'];	
@@ -47,7 +45,7 @@ if (mysqli_query($db_handle, $SQLRESET)) {
 <script>$('#myModal').modal('show');</script>
 <?PHP
 }
-endif
+
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 if ($db_found) 
