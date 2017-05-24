@@ -9,9 +9,10 @@ $db_found = mysqli_select_db($db_handle, 'status');
 $SQLRESET = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
 if (mysqli_query($db_handle, $SQLRESET)) {
     $OUTPUT = "Uptime Count reset to 0";
-} else {
+	} else {
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
-}	
+}
+	<script> $('#myModal').modal('show');</script>
 }
 	
 ?>
@@ -63,13 +64,14 @@ while ($db_field = mysqli_fetch_assoc($result))
  ?>
 <form method="POST" action="serveredit.php">
 <input type="hidden" value="updateserver" name="<?PHP echo $id; ?>">
-<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="reset" value="<?PHP echo $id; ?>"><input type="submit" value="Reset" class="btn btn-warning" data-toggle="modal" data-target="#myModal"></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="delete" value="<?PHP echo $id; ?>"><input type="submit" value="delete" class="btn btn-danger"></form></td></tr>
+<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="reset" value="<?PHP echo $id; ?>"><input type="submit" value="Reset" class="btn btn-warning"></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="delete" value="<?PHP echo $id; ?>"><input type="submit" value="delete" class="btn btn-danger"></form></td></tr>
 
 <?PHP
  }
  }
  ?>
 <!-- Modal -->
+
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
