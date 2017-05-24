@@ -26,7 +26,7 @@
 <div class="container">
 <table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
-		<tr><th colspan="6"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
+		<tr><th colspan="7"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
 		<tr><th><b>DEVICE</th><th><b>IP</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th><th>DELETE</th></tr>
 </thead>
 		<tbody>
@@ -49,7 +49,7 @@ while ($db_field = mysqli_fetch_assoc($result))
  ?>
 <form method="POST" action="serveredit.php">
 <input type="hidden" value="updateserver" name="<?PHP echo $id; ?>">
-<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></td><td><input type="submit" value="delete" class="btn btn-warning"></td><td><input type="submit" value="delete" class="btn btn-danger"></td></tr>
+<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></td><td><input type="submit" value="Reset" class="btn btn-warning"></td><td><input type="submit" value="delete" class="btn btn-danger"></td></tr>
 </form>
 <?PHP
  }
