@@ -42,11 +42,6 @@ if (mysqli_query($db_handle, $SQLRESET)) {
 	} else {
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
 }
-?>
-<?php if($show_modal):?>
-  <script> $('#myModal').modal('show');</script>
-<?php endif;?>
-<?PHP
 }
 
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
@@ -73,7 +68,9 @@ while ($db_field = mysqli_fetch_assoc($result))
  }
  ?>
 <!-- Modal -->
-
+<?php if($show_modal):?>
+  <script> $('#myModal').modal('show');</script>
+<?php endif;?>
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
