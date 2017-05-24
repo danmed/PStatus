@@ -1,5 +1,21 @@
 <!DOCTYPE html>
-<?PHP include "config.inc.php"; ?>
+<?PHP include "config.inc.php"; 
+	
+if (isset $_POST['reset'];) 
+{
+$resetid = $_POST['reset'];	
+$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
+$db_found = mysqli_select_db($db_handle, 'status');
+$SQLRESET = "UPDATE servers SET count = '0', ups = '0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
+if (mysqli_query($db_handle, $SQL2)) {
+    $OUTPUT = "Uptime Count reset to 0";
+} else {
+    $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
+}	
+}
+	
+	
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
