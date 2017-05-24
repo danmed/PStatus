@@ -63,9 +63,29 @@ while ($db_field = mysqli_fetch_assoc($result))
  ?>
 <form method="POST" action="serveredit.php">
 <input type="hidden" value="updateserver" name="<?PHP echo $id; ?>">
-<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="reset" value="<?PHP echo $id; ?>"><input type="submit" value="Reset" class="btn btn-warning"></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="delete" value="<?PHP echo $id; ?>"><input type="submit" value="delete" class="btn btn-danger"></form></td></tr>
+<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="reset" value="<?PHP echo $id; ?>"><input type="submit" value="Reset" class="btn btn-warning" data-toggle="modal" data-target="#myModal"></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="delete" value="<?PHP echo $id; ?>"><input type="submit" value="delete" class="btn btn-danger"></form></td></tr>
 
 <?PHP
  }
  }
  ?>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">PStatus - Action Result</h4>
+      </div>
+      <div class="modal-body">
+        <p><?PHP echo $RESETRESULT; ?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
