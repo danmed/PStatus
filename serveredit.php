@@ -71,6 +71,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	
 <?php if($show_modal):?>
 <script type='text/javascript'>$("#myModal").modal("show")</script>
+	Done!!!
 <?php endif;?>
 	
 <!-- Modal -->
