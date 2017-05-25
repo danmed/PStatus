@@ -24,8 +24,8 @@
 <div class="container">
 <table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
-		<tr><th colspan="7"><center><img src="icons/email-outbox.png">&nbsp;SMTP Settings</th></tr>
-		<tr><th><b>SMTP</th><th><b>PORT</th><th><b>USERNAME</th><th><b>PASSWORD</th><th><b>ADMIN EMAIL</th><th>UPDATE</th></tr>
+		<tr><th colspan="5"><center><img src="icons/email-outbox.png">&nbsp;SMTP Settings</th></tr>
+		<tr><th><b>SMTP</th><th><b>PORT</th><th><b>USERNAME</th><th><b>PASSWORD</th><th><b>ADMIN EMAIL</th></tr>
 </thead>
 		<tbody>
 <?PHP
@@ -34,8 +34,10 @@ include "config.inc.php";
 
 <form method="POST" action="settings.php">
 <input type="hidden" value="<?PHP echo $id; ?>" name="updatesetting">
-<tr><td><input type="text" size="20" name="smtp" value="<?PHP echo $smtp; ?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP echo $smtp_port;?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP echo $smtp_username; ?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP echo $smtp_password; ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP echo $admin_email; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td></tr>
-
+<tr><td><input type="text" size="20" name="smtp" value="<?PHP echo $smtp; ?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP echo $smtp_port;?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP echo $smtp_username; ?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP echo $smtp_password; ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP echo $admin_email; ?>"</td></tr>
+<tr><th colspan="5"><center><img src="icons/email-outbox.png">&nbsp;Misc Settings</th></tr>
+	<tr><Td colspan="2.5">Enable Smart Devices</td><td colspan="2.5">Default Refresh Rate</td></tr>
+<tr><td colspan="5"><input type="submit" value="update" class="btn btn-success"></form></td></tr>
 	</table>
 		<?PHP include "aboutmodal.php"; ?>
 	<?PHP include "footer.php"; ?>
