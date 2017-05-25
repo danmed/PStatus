@@ -83,7 +83,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'><Center>" . ($online ? 'online':'offline') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
 }
 
-if (isset($enable_smart))
+if ($smart_enable == "1")
 {
 ?>
 <thead>
