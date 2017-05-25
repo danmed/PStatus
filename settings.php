@@ -35,13 +35,16 @@ include "config.inc.php";
 <form method="POST" action="settings.php">
 <input type="hidden" value="<?PHP echo $id; ?>" name="updatesetting">
 <tr><td><input type="text" size="20" name="smtp" value="<?PHP echo $smtp; ?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP echo $smtp_port;?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP echo $smtp_username; ?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP echo $smtp_password; ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP echo $admin_email; ?>"</td></tr>
-<tr><th colspan="5"><center><img src="icons/email-outbox.png">&nbsp;Misc Settings</th></tr>
-<table class="table table-striped" cellpadding="4" cellspacing="4" border="1">
-	<tr><Td colspan="5">Enable Smart Devices</td><td colspan="2.5">Default Refresh Rate</td></tr>
-	</table>
+</table>
 
-<tr><td><input type="submit" value="update" class="btn btn-success"></form></td></tr>
+			
+<table class="table table-striped" cellpadding="4" cellspacing="4" border="1">
+	<tr><th colspan="2"><center><img src="icons/email-outbox.png">&nbsp;Misc Settings</th></tr>
+	<tr><Td>Enable Smart Devices</td><td>Default Refresh Rate</td></tr>
 	</table>
+<center>
+<input type="submit" value="update" class="btn btn-success"></form>
+
 		<?PHP include "aboutmodal.php"; ?>
 	<?PHP include "footer.php"; ?>
 <?php if($show_modal):?>
