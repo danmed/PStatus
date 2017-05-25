@@ -40,6 +40,7 @@ if ($db_found)
 	else 
 	{
     	$OUTPUT = "Error updating settings : " . mysqli_error($db_handle);
+	}
 }
 }
 ?>
