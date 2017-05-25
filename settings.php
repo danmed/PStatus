@@ -41,7 +41,7 @@ include "config.inc.php";
 <table class="table table-striped" cellpadding="4" cellspacing="4" border="1">
 	<tr><th colspan="2"><center><img src="icons/email-outbox.png">&nbsp;Misc Settings</th></tr>
 	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td></tr>
-	<tr><td><input type="checkbox" name="enable_smart" value="1" checked="0"></td><td></td></tr>
+	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td></td></tr>
 	</table>
 <center>
 <input type="submit" value="update" class="btn btn-success"></form>
