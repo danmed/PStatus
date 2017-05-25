@@ -17,6 +17,25 @@
 <?PHP include "navbar.php"; ?>
 <?PHP include "config.inc.php"; ?>
 
+<?PHP
+if(isset $_POST['updatesetting']) {
+	
+$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
+$db_found = mysqli_select_db($db_handle, 'status');
+if ($db_found) 
+{
+	$updateid = $_POST['updatesetting'];
+	$smtp = $_POST['smtp'];
+	$smtp_port = $_POST['smtp_port'];
+	$smtp_username = $_POST['smtp_username'];
+	$smtp_password = $_POST['smtp_password'];
+	$admin_email = $_POST['admin_email'];
+	$refresh = $_POST['refresh'];
+	$enable_smart = $_POST['enable_smart'];
+	$updatesql = "UPDATE config SET enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = 1";
+	
+?>
+
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
@@ -29,7 +48,7 @@
 </thead>
 		<tbody>
 <form method="POST" action="settings.php">
-<input type="hidden" value="<?PHP echo $id; ?>" name="updatesetting">
+<input type="hidden" value="1" name="updatesetting">
 <tr><td><input type="text" size="20" name="smtp" value="<?PHP echo $smtp; ?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP echo $smtp_port;?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP echo $smtp_username; ?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP echo $smtp_password; ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP echo $admin_email; ?>"</td></tr>
 </table>
 
