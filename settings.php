@@ -32,7 +32,7 @@ if ($db_found)
 	$admin_email = $_POST['admin_email'];
 	$refresh = $_POST['refresh'];
 	$enable_smart = $_POST['enable_smart'];
-	$updatesql = "UPDATE config SET enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = 1";
+	$updatesql = "UPDATE config SET enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
 	
 ?>
 
