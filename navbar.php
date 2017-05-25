@@ -34,6 +34,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="serveradd.php">Add Devices</a></li>
 						<li><a href="serveredit.php">Edit Devices</a></li>
+						<li><a href="settings.php">Settings</a></li>
 
 					</ul>
 				</li>
