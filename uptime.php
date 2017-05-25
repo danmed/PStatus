@@ -20,6 +20,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else
 	{
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
+	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
     echo "Record updated successfully";
