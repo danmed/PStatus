@@ -24,7 +24,7 @@
 <div class="container">
 <table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
-		<tr><th colspan="7"><center><img src="icons/005-computer-screen.png">&nbsp;SMTP Settings</th></tr>
+		<tr><th colspan="7"><center><img src="icons/email-outbox.png">&nbsp;SMTP Settings</th></tr>
 		<tr><th><b>SMTP</th><th><b>PORT</th><th><b>USERNAME</th><th><b>PASSWORD</th><th><b>ADMIN EMAIL</th><th>UPDATE</th></tr>
 </thead>
 		<tbody>
