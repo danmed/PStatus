@@ -1,5 +1,6 @@
 <?PHP
 include "config.inc.php";
+require 'mail/PHPMailerAutoload.php';
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 if ($db_found) 
@@ -19,6 +20,36 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else
 	{
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
+	
+
+$mail = new PHPMailer;
+
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = $smtp;  // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = $smtp_username;                 // SMTP username
+$mail->Password = $smtp_password;                           // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = $smtp_port;                                    // TCP port to connect to
+
+$mail->setFrom($admin_mail, 'Mailer');
+$mail->addAddress($admin_email);     // Add a recipient
+$mail->addReplyTo($admin_email, 'PStatus Alert');
+
+$mail->isHTML(true);                                  // Set email format to HTML
+
+$mail->Subject = 'PStatus Alert - ' . $ip;
+$mail->Body    = $ip . 'is down!!';
+$mail->AltBody = $ip . 'is down!!';
+
+if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent';
+}
 	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
