@@ -130,6 +130,10 @@ while ($db_field = mysqli_fetch_assoc($result))
 </form>
   <br>
   <!-- ADD SMART DEVICE FORM -->
+<?PHP
+if ($enable_smart == "1")
+{
+?>
 <form method="POST" action="serveradd.php">
 <input type="hidden" value="addsmart" name="addsmart">
 <table class="table" cellpadding="4" cellspacing="4" border="1">
@@ -142,6 +146,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 <tr><td colspan="4"><center><?PHP echo $updateresult3; ?></td></tr>
 </table>
   </form>
+<?PHP } ?>
   <br>
   <?PHP include "footer.php"; ?>
 	<?PHP include "aboutmodal.php"; ?>
