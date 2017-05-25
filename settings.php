@@ -18,7 +18,7 @@
 <?PHP include "config.inc.php"; ?>
 
 <?PHP
-if(isset $_POST['updatesetting']) {
+if(isset ($_POST['updatesetting'])) {
 	
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
