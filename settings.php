@@ -14,8 +14,8 @@
 
   <body>
 
-  <?PHP include "navbar.php"; ?>
-
+<?PHP include "navbar.php"; ?>
+<?PHP include "config.inc.php"; ?>
 
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -28,10 +28,6 @@
 		<tr><th><b>SMTP</th><th><b>PORT</th><th><b>USERNAME</th><th><b>PASSWORD</th><th><b>ADMIN EMAIL</th></tr>
 </thead>
 		<tbody>
-<?PHP
-include "config.inc.php"; 
-?>
-
 <form method="POST" action="settings.php">
 <input type="hidden" value="<?PHP echo $id; ?>" name="updatesetting">
 <tr><td><input type="text" size="20" name="smtp" value="<?PHP echo $smtp; ?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP echo $smtp_port;?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP echo $smtp_username; ?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP echo $smtp_password; ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP echo $admin_email; ?>"</td></tr>
