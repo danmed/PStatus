@@ -47,6 +47,7 @@ include "config.inc.php";
 	</table>
 <center>
 <input type="submit" value="update" class="btn btn-success"></form>
+			<br>
 
 		<?PHP include "aboutmodal.php"; ?>
 	<?PHP include "footer.php"; ?>
