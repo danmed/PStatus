@@ -36,10 +36,6 @@ include "config.inc.php";
 <input type="hidden" value="<?PHP echo $id; ?>" name="updatesetting">
 <tr><td><input type="text" size="20" name="smtp" value="<?PHP echo $smtp; ?>"</td><td><input type="text" size="20" name="smtp_port" value="<?PHP echo $smtp_port;?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP echo $smtp_username; ?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP echo $smtp_password; ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP echo $admin_email; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td></tr>
 
-<?PHP
- }
- }
- ?>
 	</table>
 		<?PHP include "aboutmodal.php"; ?>
 	<?PHP include "footer.php"; ?>
