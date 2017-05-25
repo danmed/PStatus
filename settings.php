@@ -26,6 +26,7 @@ if ($db_found)
 {
 	$updateid = $_POST['updatesetting'];
 	$smtp = $_POST['smtp'];
+	$show_modal = true;
 	$smtp_port = $_POST['smtp_port'];
 	$smtp_username = $_POST['smtp_username'];
 	$smtp_password = $_POST['smtp_password'];
@@ -33,6 +34,12 @@ if ($db_found)
 	$refresh = $_POST['refresh'];
 	$enable_smart = $_POST['enable_smart'];
 	$updatesql = "UPDATE config SET enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
+	if (mysqli_query($db_handle, $updatesql)) {
+    	$OUTPUT = "Settings Updated";
+	} 
+	else 
+	{
+    	$OUTPUT = "Error updating settings : " . mysqli_error($db_handle);
 }
 }
 ?>
