@@ -64,7 +64,7 @@ if ($db_found)
 			
 <table class="table table-striped" cellpadding="4" cellspacing="4" border="1">
 	<thead>
-	<tr><th colspan="2"><center><img src="icons/email-outbox.png">&nbsp;Misc Settings</th></tr>
+	<tr><th colspan="2"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
 	</thead>
 	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td></tr>
 	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td><input type="text" size="20" name="refresh" value="<?PHP echo $refresh; ?>"></td></tr>
