@@ -46,6 +46,28 @@ if (mysqli_query($db_handle, $SQLRESET)) {
     $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
 }
 }
+			
+			
+if (isset($_POST['updateserver'])) 
+{
+$updateid = $_POST['updateserver'];
+$device = $_POST['device'];
+$ip = $_POST['ip'];
+$info = $_POST['info'];
+$purpose = $_POST['purpose'];
+$show_modal = true;
+$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
+$db_found = mysqli_select_db($db_handle, 'status');
+$SQLUPDATE = "UPDATE servers SET device = '" . $device . "', ip = '" . $ip . "', info='" . $info . "', purpose = '" . $purpose . "' WHERE id = '" . $updateid . "'";
+if (mysqli_query($db_handle, $SQLRESET)) {
+    $OUTPUT = $device . " information updated";
+	} 
+	else 
+	{
+    $OUTPUT = "Error resetting Uptime Count: " . mysqli_error($db_handle);
+}
+}
+			
 
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
