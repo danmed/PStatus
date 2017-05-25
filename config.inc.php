@@ -9,7 +9,7 @@ $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 if ($db_found) 
 {
-$config_sql = "select * from config"	;
+$config_sql = "select * from config where id = 1"	;
 $config_result = mysqli_query($db_handle, $config_sql);
 while ($db_field = mysqli_fetch_assoc($config_result))
 {
