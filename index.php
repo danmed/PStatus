@@ -93,7 +93,7 @@ mysqli_close($db_handle);
 			</tbody>
 	</table>
 	<?PHP
-}
+
 function pingtest($ip) {
     
 	exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
