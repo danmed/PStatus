@@ -17,6 +17,8 @@ Ping of internal servers and port check of related services with a Web front end
 * Delete Smart Devices and Controls
 * Edit Smart Devices and Controls
 * Add / Edit users so htaccess is no longer required
+* Enable / Disable email alerts (Currently always on)
+* Enable Disable alerts per device
 
 # Done
 * Add auto refresh rate
