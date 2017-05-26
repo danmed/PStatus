@@ -40,6 +40,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	curl_setopt($ch,CURLOPT_URL, $url);
 	curl_setopt($ch,CURLOPT_POST, count($fields));
 	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+	curl_setopt($ch, CURLOPT_USERPWD, "danmed:312217");
 
 	//execute post
 	$result = curl_exec($ch);
