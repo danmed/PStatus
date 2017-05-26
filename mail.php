@@ -18,9 +18,9 @@ $mail->Password = $smtp_password;                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = $smtp_port;                                    // TCP port to connect to
 
-$mail->setFrom('danmed@gmail.com', 'Mailer');
-$mail->addAddress('dan.medhurst@planb.co.uk', 'Dan Medhurst');     // Add a recipient
-$mail->addReplyTo('danmed@gmail.com', 'PStatus');
+$mail->setFrom($smtp_username, 'Pstatus');
+$mail->addAddress($admin_email);     // Add a recipient
+$mail->addReplyTo($smtp_username,, 'PStatus');
 
 $mail->Subject = $subject;
 $mail->Body    = $body;
