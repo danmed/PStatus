@@ -47,9 +47,9 @@ if (mysqli_query($db_handle, $SQLRESET)) {
 }
 }
 
-if (isset($_POST['deleteserver'])) 
+if (isset($_POST['delete'])) 
 {
-$deleteid = $_POST['updateserver'];
+$deleteid = $_POST['delete'];
 $device = $_POST['device'];
 $show_modal = true;
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
@@ -108,7 +108,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 
 <form method="POST" action="serveredit.php">
 <input type="hidden" value="<?PHP echo $id; ?>" name="updateserver">
-<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="reset" value="<?PHP echo $id; ?>"><input type="submit" value="Reset" class="btn btn-warning"></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="delete" value="<?PHP echo $id; ?>"><input type="submit" value="delete" class="btn btn-danger"></form></td></tr>
+<tr><td><input type="text" size="20" name="device" value="<?PHP echo $device; ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP echo $ip;?>"</td><td><input type="text" size="20" name="info" value="<?PHP echo $info; ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP echo $purpose; ?>"</td><td><input type="submit" value="update" class="btn btn-success"></form></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="reset" value="<?PHP echo $id; ?>"><input type="submit" value="Reset" class="btn btn-warning"></td><td><form method="POST" action="serveredit.php"><input type="hidden" name="delete" value="<?PHP echo $id; ?>"><input type="hidden" name="device" value="<?PHP echo $device; ?>"><input type="submit" value="delete" class="btn btn-danger"></form></td></tr>
 
 <?PHP
  }
