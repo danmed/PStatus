@@ -15,6 +15,7 @@ $refresh = $_GET['refresh'];
     <title>PStatus</title>
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>	 
