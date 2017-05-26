@@ -13,7 +13,7 @@ $refresh = $_GET['refresh'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
     <title>PStatus</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"></style>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
