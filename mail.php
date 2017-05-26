@@ -19,8 +19,8 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = $smtp_port;                                    // TCP port to connect to
 
 $mail->setFrom($smtp_username, 'Pstatus');
-$mail->addAddress($admin_email);     // Add a recipient
-$mail->addReplyTo($smtp_username,, 'PStatus');
+$mail->addAddress($admin_email, $admin_email);     // Add a recipient
+$mail->addReplyTo($smtp_username, 'PStatus');
 
 $mail->Subject = $subject;
 $mail->Body    = $body;
