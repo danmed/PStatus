@@ -43,7 +43,7 @@ $(document).ready(function() {
 	<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
     <title>PStatus</title>
 
-    
+<style>    
   .progress {
     margin-bottom: 0 !important;
 	background-color: #DA2A2A;
