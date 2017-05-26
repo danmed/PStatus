@@ -15,6 +15,7 @@ Ping of internal servers and port check of related services with a Web front end
 * Display uptime data including last uptime / downtime
 * Edit Services
 * Delete Smart Devices and Controls
+* Edit Smart Devices and Controls
 * Add / Edit users so htaccess is no longer required
 
 # Done
