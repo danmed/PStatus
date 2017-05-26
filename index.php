@@ -14,6 +14,11 @@ $refresh = $_GET['refresh'];
 	<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
     <title>PStatus</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="js/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>	 
 	  
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -34,11 +39,7 @@ $refresh = $_GET['refresh'];
 
     <?PHP include "navbar.php"; ?>
 
-<link rel="stylesheet" href="js/jquery.dataTables.min.css"></style>
-<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 
 $(document).ready(function(){
