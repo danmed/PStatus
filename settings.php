@@ -69,7 +69,7 @@ if ($db_found)
 	<thead>
 	<tr><th colspan="4"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
 	</thead>
-	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td><td><b>Directory Security - <img src="icons/medical.png" title="Required if you have password protected the directory that PStatus is running from. Without it, emails cannot be sent."></td><td><b>Email Alert Limit</td></tr>
+	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td><td><b>Directory Security - <img src="icons/medical.png" title="Required if you have password protected the directory that PStatus is running from. Without it, emails cannot be sent."></td><td><b>Email Alert Threshold</td></tr>
 	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td><input type="text" size="20" name="refresh" value="<?PHP echo $refresh; ?>"></td><td><input type="text" size="20" name="dir_username" value="<?PHP echo $dir_username; ?>"> : <input type="text" size="20" name="dir_password" value="<?PHP echo $dir_password; ?>"><td><input type="text" size="20" name="alert_limit" value="<?PHP echo $alert_limit; ?>"></td></tr>
 	</table>
 <center>
