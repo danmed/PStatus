@@ -36,7 +36,7 @@ $refresh = $_GET['refresh'];
 	<script type="text/javascript" class="init">
 	
 $(document).ready(function() {
-	$('#example').DataTable();
+	$('#status').DataTable();
 } );
 	</script>
 	<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
