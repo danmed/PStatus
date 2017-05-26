@@ -8,7 +8,7 @@ require_once "Mail.php";
 $host = "ssl://smtp.gmail.com";
 $username = "danmed@gmail.com";
 $password = "N01d34M4t3";
-$port = "567";
+$port = "465";
 $to = "dan.medhurst@planb.co.uk";
 $email_from = "danmed@gmail.com";
 $email_subject = "Subject Line Here: " ;
