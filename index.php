@@ -33,8 +33,13 @@ $refresh = $_GET['refresh'];
 
 </style>
 <script type="text/javascript">
+	$(document).ready(function() {
+    $('#example').DataTable();
+} );
+	  </script>
+<script type="text/javascript">
+
 $(document).ready(function(){
-$('#status').dataTable();
 $("#status td.on_off:contains('offline')").css('background-color','#E05667');
 $("#status td.on_off:contains('online')").css('background-color','#56E08E');
 });
