@@ -50,7 +50,7 @@ $("#status td.on_off:contains('online')").css('background-color','#56E08E');
 
 <center>
 
-	
+	<div class="container">
 	<table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
 	<tr><th><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
@@ -92,6 +92,7 @@ mysqli_close($db_handle);
 		?>
 			</tbody>
 	</table>
+	</div>
 	<?PHP
 
 function pingtest($ip) {
