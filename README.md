@@ -23,6 +23,7 @@ uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/
 * Add Smart device controls
 * Run in backgroud to build stats of uptime
 * Reset uptime data
+* Email alerts with threshold
 
 # Screenshot
 
