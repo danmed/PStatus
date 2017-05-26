@@ -42,7 +42,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	curl_setopt($ch,CURLOPT_URL, $url);
 	curl_setopt($ch,CURLOPT_POST, count($fields));
 	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-	curl_setopt($ch, CURLOPT_USERPWD, $dir_username . ":" . $dir_password);
+	//curl_setopt($ch, CURLOPT_USERPWD, $dir_username . ":" . $dir_password);
 
 	//execute post
 	$result = curl_exec($ch);
