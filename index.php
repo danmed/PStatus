@@ -14,9 +14,9 @@ $refresh = $_GET['refresh'];
 	<meta http-equiv="refresh" content="<?PHP echo $refresh; ?>">
     <title>PStatus</title>
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"></style>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>	 
 	  
     <!--[if lt IE 9]>
