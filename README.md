@@ -28,17 +28,16 @@ Ping of internal servers and port check of related services with a Web front end
 
 # Screenshot
 
-Main Page
 
 ![Alt text](/../screenshots/pstatus.png?raw=true "Main Screen")
 
-Service Page
-
 ![Alt text](/../screenshots/pstatus2.png?raw=true "Service Screen")
 
-Admin Page
-
 ![Alt text](/../screenshots/pstatus3.png?raw=true "Service Screen")
+
+![Alt text](/../screenshots/pstatus4.png?raw=true "Service Screen")
+
+![Alt text](/../screenshots/pstatus5.png?raw=true "Service Screen")
 
 # Credit 
 Original idea sparked by https://gist.github.com/k0nsl/733955a3c3093832de49
