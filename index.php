@@ -49,7 +49,7 @@ $("#status td.on_off:contains('online')").css('background-color','#56E08E');
 
 
 <center>
-<div class="container">
+
 	
 	<table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
