@@ -85,7 +85,7 @@ $db_found = mysqli_select_db($db_handle, 'status');
 
 if ($db_found) 
 {
-$SQL = "select * from servers"	;
+$SQL = "select * from servers order by device desc"	;
 $result = mysqli_query($db_handle, $SQL);
 while ($db_field = mysqli_fetch_assoc($result))
 {
