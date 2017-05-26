@@ -73,7 +73,7 @@ $("#status td.on_off:contains('online')").css('background-color','#56E08E');
 	<div class="container">
 	<table class="table table-striped" id="status" cellpadding="4" cellspacing="4" border="1">
 	<thead>
-	<tr><th colspan="5"><center><b><img src="icons/005-computer-screen.png" width="16" height="16">&nbsp;Server Ping Status</th></tr>
+	
 	<tr><th><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
 	</thead>
 	<tbody>
