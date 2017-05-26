@@ -9,10 +9,10 @@ $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = $smtp;  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = '$smtp_username';                 // SMTP username
-$mail->Password = '$smtp_password';                           // SMTP password
+$mail->Username = $smtp_username;                 // SMTP username
+$mail->Password = $smtp_password;                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;                                    // TCP port to connect to
+$mail->Port = $smtp_port;                                    // TCP port to connect to
 
 $mail->setFrom('danmed@gmail.com', 'Mailer');
 $mail->addAddress('dan.medhurst@planb.co.uk', 'Dan Medhurst');     // Add a recipient
@@ -28,3 +28,4 @@ if(!$mail->send()) {
 } else {
     echo 'Message has been sent';
 }
+?>
