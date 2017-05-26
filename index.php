@@ -86,42 +86,13 @@ while ($db_field = mysqli_fetch_assoc($result))
 	print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'><Center>" . ($online ? 'online':'offline') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
 }
 
-if ($enable_smart == "1")
-{
-?>
-<thead>
-<tr><th colspan="5"><center><b><img src="icons/003-networking.png">&nbsp;Smart Device Ping Status</th></tr>
-	<tr><th><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
-</thead>
-	<?PHP
-
-$SQL = "select * from smartdevices"	;
-$result = mysqli_query($db_handle, $SQL);
-while ($db_field = mysqli_fetch_assoc($result))
-{
-	$device = $db_field['device'];
-	$ip = $db_field['ip'];
-	$id = $db_field['id'];
-	$port = $db_field['port'];
-	$info = $db_field['info'];
-	$purpose = $db_field['purpose'];
-	$count = $db_field['count'];
-	$ups = $db_field['ups'];
-	$downs = $db_field['downs'];
-	$online  = pingtest($ip);
-	$value = $ups;
-	$max = $count;
-	$scale = 1.0;
-	if ( !empty($max) ) { $percent = ($value * 100) / $max; } 
-	else { $percent = 0; }
-	if ( $percent > 100 ) { $percent = 100; }
-
-	print "<tr><td><a href='smartcontrols.php?device=" . $device . "&parent=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td>" . $purpose . "</td><td class='on_off'><center>" . ($online ? 'online':'offline') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div><div></td></tr>";
-}
-
 mysqli_close($db_handle);
 	
 }
+		?>
+			</tbody>
+	</table>
+	<?PHP
 }
 function pingtest($ip) {
     
@@ -145,8 +116,7 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 }
 	</script>
-	</tbody>
-	</table>
+
 	<br>
 	<?PHP include "footer.php"; ?>
 	<?PHP include "aboutmodal.php"; ?>
