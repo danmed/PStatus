@@ -3,7 +3,7 @@ Ping of internal servers and port check of related services with a Web front end
 
 # Requirements
 * Web server running PHP (7 is tested.. 5 should work fine)
-* PHP Curl (For email functionality)
+* PHP Pear - https://wonderphp.wordpress.com/2014/02/28/installing-pear-mail-for-php-on-ubuntu/
 * MYSQL Database (import status.sql to a database named "status")
 * uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/html/status/uptime.php
 
