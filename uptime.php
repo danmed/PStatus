@@ -21,6 +21,31 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else
 	{
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
+	//extract data from the post
+	//set POST variables
+	$url = 'http://web.danmed.co.uk/status/mail.php';
+	$fields = array(
+	'subject' => urlencode('PStatus - Device Down - ' . $device),
+	'body' => urlencode($device . ' has not responded to a ping request'),
+	);
+
+	//url-ify the data for the POST
+	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+	rtrim($fields_string, '&');
+
+	//open connection
+	$ch = curl_init();
+
+	//set the url, number of POST vars, POST data
+	curl_setopt($ch,CURLOPT_URL, $url);
+	curl_setopt($ch,CURLOPT_POST, count($fields));
+	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+	//execute post
+	$result = curl_exec($ch);
+
+	//close connection
+	curl_close($ch);
 	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
