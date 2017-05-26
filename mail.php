@@ -2,6 +2,10 @@
 include 'config.inc.php';
 require 'mail/PHPMailerAutoload.php';
 
+$subject = $_POST['subject'];
+$body = $_POST['body'];
+$AltBody = $_POST['altbody'];
+
 $mail = new PHPMailer;
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -18,9 +22,9 @@ $mail->setFrom('danmed@gmail.com', 'Mailer');
 $mail->addAddress('dan.medhurst@planb.co.uk', 'Dan Medhurst');     // Add a recipient
 $mail->addReplyTo('danmed@gmail.com', 'PStatus');
 
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->Subject = $subject;
+$mail->Body    = $body;
+$mail->AltBody = $altbody;
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';
