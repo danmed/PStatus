@@ -23,6 +23,8 @@ Ping of internal servers and port check of related services with a Web front end
 * Run in backgroud to build stats of uptime
 * Reset uptime data
 * Email alerts with threshold
+* Option to display Smart Devices or not
+* Configurable settings via gui
 
 # Screenshot
 
