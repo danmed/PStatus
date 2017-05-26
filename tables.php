@@ -4,10 +4,6 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>DataTables example - Bootstrap styling</title>
-	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
-	<link rel="stylesheet" type="text/css" href="/media/css/site-examples.css?_=28caf719f2a3866baf6bb3a3255c9c35">
 	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
@@ -43,48 +39,7 @@ $(document).ready(function() {
 	</script>
 </head>
 <body class="wide comments example dt-example-bootstrap">
-	<a name="top" id="top"></a>
-	<div id="logo"><img src="/media/images/logo-fade.png" class="logo"></div>
-	<div class="fw-container">
-		<div class="fw-header fh-fixedHeader">
-			<img src="/media/images/logo-fade.png" class="logo">
-			<div class="nav-master">
-				<ul>
-					<li class="active">
-						<a href="/"><img src="/media/images/nav-dt.png" alt="DataTables logo"> DataTables</a>
-					</li>
-					<li>
-						<a href="//editor.datatables.net"><img src="/media/images/nav-e.png" alt="Editor logo"> Editor</a>
-					</li>
-				</ul>
-				<div class="account"></div>
-			</div>
-			<div id="search">
-				<form action="/q/" method="get">
-					<input type="text" name="q" placeholder="Search . . ." autocomplete="off"> <button>Search</button>
-				</form>
-			</div>
-		</div>
-		<div class="fw-nav">
-			<div class="nav-main">
-				<ul><li class=" sub"><a href="/examples/index">Examples</a></li><li class=" sub"><a href="/manual/index">Manual</a></li><li class=" sub"><a href="/reference/index">Reference</a></li><li class=" sub"><a href="/extensions/index">Extensions</a><ul><li class=" sub"><a href="/extensions/autofill">AutoFill</a></li><li class=" sub"><a href="/extensions/buttons">Buttons</a></li><li class=" sub"><a href="/extensions/colreorder">ColReorder</a></li><li class=""><a href="/extensions/editor">Editor</a></li><li class=" sub"><a href="/extensions/fixedcolumns">FixedColumns</a></li><li class=" sub"><a href="/extensions/fixedheader">FixedHeader</a></li><li class=" sub"><a href="/extensions/keytable">KeyTable</a></li><li class=" sub"><a href="/extensions/responsive">Responsive</a><ul><li class=""><a href="/extensions/responsive/init">Initialisation</a></li><li class=""><a href="/extensions/responsive/priority">Column priority</a></li><li class=""><a href="/extensions/responsive/classes">Class logic</a></li><li class=""><a href="/extensions/responsive/details-views">Details views</a></li><li class=""><a href="/extensions/responsive/examples">Examples</a></li><li class=""><a href="/extensions/responsive/options">Reference: Options</a></li><li class=""><a href="/extensions/responsive/api">Reference: API</a></li><li class=""><a href="/extensions/responsive/events">Reference: Events</a></li></ul></li><li class=" sub"><a href="/extensions/rowgroup">RowGroup</a></li><li class=" sub"><a href="/extensions/rowreorder">RowReorder</a></li><li class=" sub"><a href="/extensions/scroller">Scroller</a></li><li class=" sub"><a href="/extensions/select">Select</a></li><li class=" sub"><a href="/extensions/colvis">ColVis <span class="tag">Retired</span></a></li><li class=" sub"><a href="/extensions/tabletools">TableTools <span class="tag">Retired</span></a></li></ul></li><li class=" sub"><a href="/plug-ins/index">Plug-ins</a></li><li class=""><a href="/blog/index">Blog</a></li><li class=""><a href="/forums/index">Forums</a></li><li class=""><a href="/support/index">Support</a></li><li class=""><a href="/faqs/index">FAQs</a></li><li class=""><a href="/download/index">Download</a></li><li class=""><a href="/purchase/index">Purchase</a></li></ul>
-			</div>
-			<div class="mobile-show">
-				<a><i>Show site navigation</i></a>
-			</div>
-		</div>
-		<div class="fw-body">
-			<div class="content">
-				<h1 class="page_title">Bootstrap styling</h1>
-				<div class="info">
-					<p>This example shows DataTables and the Responsive extension being used with the <a href="http://getbootstrap.com">Bootstrap</a> framework providing the
-					styling. The <a href="//datatables.net/manual/styling/bootstrap">DataTables / Bootstrap integration</a> prove seamless integration for DataTables to be used in
-					a Bootstrap page.</p>
-					<p>Note that the <code>dt-responsive</code> class is used to indicate to the extension that it should be enabled on this page, as <code>responsive</code>
-					<a href="http://getbootstrap.com/css/#tables-responsive">has special meaning in Bootstrap</a>. The <a href=
-					"//datatables.net/reference/option/responsive"><code class="option" title="Responsive initialisation option">responsive</code></a> option could also be used if
-					required.</p>
-				</div>
+	
 				<table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 					<thead>
 						<tr>
