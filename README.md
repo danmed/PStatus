@@ -9,13 +9,11 @@ Ping of internal servers and port check of related services with a Web front end
 
 # WIP
 
-21.05.17 - Admin page : So far you can add a server, smart device and a service.. the rest needs to be done in SQL at the moment.
+* Users + Permissions
 
 # Planned
 * Display uptime data including last uptime / downtime
 * Edit Services
-* Delete Smart Devices and Controls
-* Edit Smart Devices and Controls
 * Add / Edit users so htaccess is no longer required
 * Enable / Disable email alerts (Currently always on)
 * Enable Disable alerts per device
@@ -31,6 +29,8 @@ Ping of internal servers and port check of related services with a Web front end
 * Configurable settings via gui
 * Delete Servers and Services
 * Edit Servers
+* removed smart devices and tables
+* Added search / sorting for main device table
 
 # Screenshot
 
