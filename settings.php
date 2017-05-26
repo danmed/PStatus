@@ -33,6 +33,8 @@ if ($db_found)
 	$admin_email = $_POST['admin_email'];
 	$refresh = $_POST['refresh'];
 	$enable_smart = $_POST['enable_smart'];
+	$dir_username = $_POST['dir_username'];
+	$dir_password = $_POST['dir_password'];
 	$updatesql = "UPDATE config SET enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
 	if (mysqli_query($db_handle, $updatesql)) {
     	$OUTPUT = "Settings Updated";
@@ -66,8 +68,8 @@ if ($db_found)
 	<thead>
 	<tr><th colspan="2"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
 	</thead>
-	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td></tr>
-	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td><input type="text" size="20" name="refresh" value="<?PHP echo $refresh; ?>"></td></tr>
+	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td><td>Directory Security</td></tr>
+	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td><input type="text" size="20" name="refresh" value="<?PHP echo $refresh; ?>"></td><td><input type="text" size="20" name="dir_username" value="<?PHP echo $dir_username; ?>"> : <input type="text" size="20" name="dir_password" value="<?PHP echo $dir_password; ?>"></tr>
 	</table>
 <center>
 <input type="submit" value="update" class="btn btn-success"></form>
