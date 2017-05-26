@@ -12,15 +12,17 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$id = $db_field['id'];
 	$device = $db_field['device'];
   	$ip = $db_field['ip'];
+	$downs = $db_field['downs'];
 	$date = date("Y-m-d H:i:s");
 	$up = pingtest($ip);
 	$online = $up ? 'online' : 'offline';
 	if ($online == 'online'){
-	$SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, lastup = '" . $date . "' WHERE id = '" . $id . "'";
+	$SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, downs = '0', lastup = '" . $date . "' WHERE id = '" . $id . "'";
 	}
 	else
 	{
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
+	if ($downs >= '2'){
 	//extract data from the post
 	//set POST variables
 	$url = 'http://web.danmed.co.uk/status/mail.php';
@@ -47,6 +49,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 
 	//close connection
 	curl_close($ch);
+	}
 	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
