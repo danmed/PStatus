@@ -31,8 +31,9 @@ $refresh = $_GET['refresh'];
 	</script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="../../../../examples/resources/demo.js">
-	</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>	 
+
 	<script type="text/javascript" class="init">
 	
 $(document).ready(function() {
