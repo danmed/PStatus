@@ -32,6 +32,14 @@ $refresh = $_GET['refresh'];
 }
 
 </style>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#status').dataTable();
+$("#status td.on_off:contains('offline')").css('background-color','#E05667');
+$("#status td.on_off:contains('online')").css('background-color','#56E08E');
+});
+
+</script>
 	</head>
 
   <body>
@@ -39,15 +47,7 @@ $refresh = $_GET['refresh'];
     <?PHP include "navbar.php"; ?>
 
 
-	<script type="text/javascript">
 
-$(document).ready(function(){
-    $("#status td.on_off:contains('offline')").css('background-color','#E05667');
-	$("#status td.on_off:contains('online')").css('background-color','#56E08E');
-	$('#status').dataTable();
-});
-
-</script>
 <center>
 <div class="container">
 	
