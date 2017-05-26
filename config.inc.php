@@ -27,6 +27,8 @@ $admin_email = $db_field['admin_email'];
 /* Credentials for PHP_Curl */
 $dir_username = $db_field['dir_username'];
 $dir_password = $db_field['dir_password'];
+ /* Email Alert Down Limit */
+$alert_limit = $db_field['alert_limit'];
 }
 }
 
