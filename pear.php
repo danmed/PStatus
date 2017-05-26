@@ -5,7 +5,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
 require_once "Mail.php";
 
-$host = "smtp.gmail.com";
+$host = "ssl://smtp.gmail.com";
 $username = "danmed@gmail.com";
 $password = "N01d34M4t3";
 $port = "567";
