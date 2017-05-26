@@ -25,6 +25,7 @@
   <body>
 
     <?PHP include "navbar.php"; ?>
+	  <?PHP include "config.inc.php"; ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -52,8 +53,9 @@ $ip = $_GET['ip'];
 <tr><td><b>DEVICE</td><td><b>PORT</td><td><b>STATUS</td></tr>
 <?PHP
 
-$db_handle = mysqli_connect('192.168.2.75', 'kodi', 'kodi');
+$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
+
 
 if ($db_found) 
 {
