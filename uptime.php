@@ -23,32 +23,22 @@ while ($db_field = mysqli_fetch_assoc($result))
 	{
 	if ($downs + 1 >= $alert_limit){
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = '0', lastdown = '" . $date . "' WHERE id = '" . $id . "'";
-	//extract data from the post
-	//set POST variables
-	$url = 'mail.php';
-	$fields = array(
-	'subject' => urlencode('PStatus - Device Down - ' . $device),
-	'body' => urlencode($device . ' has not responded to ' . $downs . ' ping request(s)'),
-	);
+	error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
+set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
+require_once "Mail.php";
+$host = "ssl://" . $smtp;
+$username = $smtp_username;
+$password = $smtp_password;
+$port = $smtp_port;
+$to = $admin_email;
+$email_from = $smtp_username;
+$email_subject = "PStatus - Device Down - " .$device ;
+$email_body = $device . " has not replied to " . $alert_limit . " ping request(s)" ;
+$email_address = "noreply@pstatus.com";
+$headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
+$smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
+$mail = $smtp->send($to, $headers, $email_body);
 
-	//url-ify the data for the POST
-	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-	rtrim($fields_string, '&');
-
-	//open connection
-	$ch = curl_init();
-
-	//set the url, number of POST vars, POST data
-	curl_setopt($ch,CURLOPT_URL, $url);
-	curl_setopt($ch,CURLOPT_POST, count($fields));
-	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-	//curl_setopt($ch, CURLOPT_USERPWD, $dir_username . ":" . $dir_password);
-
-	//execute post
-	$result = curl_exec($ch);
-
-	//close connection
-	curl_close($ch);
 	}
 		else
 		{
