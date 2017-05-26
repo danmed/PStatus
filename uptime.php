@@ -28,7 +28,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$url = 'http://web.danmed.co.uk/status/mail.php';
 	$fields = array(
 	'subject' => urlencode('PStatus - Device Down - ' . $device),
-	'body' => urlencode($device . ' has not responded to a ping request'),
+	'body' => urlencode($device . ' has not responded to ' . $downs . ' ping request(s)'),
 	);
 
 	//url-ify the data for the POST
