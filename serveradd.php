@@ -71,19 +71,6 @@ $db_found = mysqli_select_db($db_handle, 'status');
 }
    }  
    
- if (isset($_POST['addsmart']))
-  {
-    $device = $_POST['device'];
-    $ip = $_POST['ip'];
-    $info = $_POST['info'];
-    $purpose = $_POST['purpose'];
-    $sql = "INSERT INTO smartdevices (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
-    if (mysqli_query($db_handle, $sql)) {
-    $updateresult3 = "New record created successfully";
-} else {
-    $updateresult3 = "Error: " . $sql . "<br>" . mysqli_error($db_handle);
-}
-  }
 ?>
 
  <!-- ADD SERVER FORM -->
@@ -129,24 +116,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 </table>
 </form>
   <br>
-  <!-- ADD SMART DEVICE FORM -->
-<?PHP
-if ($enable_smart == "1")
-{
-?>
-<form method="POST" action="serveradd.php">
-<input type="hidden" value="addsmart" name="addsmart">
-<table class="table" cellpadding="4" cellspacing="4" border="1">
-<thead>
-<tr><th colspan="4"><center><img src="icons/003-networking.png">&nbsp;Add Smart Device</th></tr>
-</thead>
-<tr><td>Name</td><td>IP Address</td><td>Info</td><td>Purpose</td></tr>
-<tr><td><input type="text" size="20" name="device"></td><td><input type="text" size="20" name="ip"></td><td><input type="text" size="20" name="info"></td><td><input type="text" size="20" name="purpose"></td></tr>
-<tr><td colspan="4"><center><input type="submit" value="submit"></td></tr>
-<tr><td colspan="4"><center><?PHP echo $updateresult3; ?></td></tr>
-</table>
-  </form>
-<?PHP } ?>
+
   <br>
   <?PHP include "footer.php"; ?>
 	<?PHP include "aboutmodal.php"; ?>
