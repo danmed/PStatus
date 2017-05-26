@@ -25,7 +25,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = '0', lastdown = '" . $date . "' WHERE id = '" . $id . "'";
 	//extract data from the post
 	//set POST variables
-	$url = 'http://web.danmed.co.uk/status/mail.php';
+	$url = 'mail.php';
 	$fields = array(
 	'subject' => urlencode('PStatus - Device Down - ' . $device),
 	'body' => urlencode($device . ' has not responded to ' . $downs . ' ping request(s)'),
