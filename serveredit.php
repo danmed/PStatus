@@ -114,7 +114,7 @@ $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
 if ($db_found) 
 {
-$SQL = "select * from servers order by device desc"	;
+$SQL = "select * from servers order by device asc"	;
 $result = mysqli_query($db_handle, $SQL);
 while ($db_field = mysqli_fetch_assoc($result))
 {
