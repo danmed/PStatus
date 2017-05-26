@@ -1,5 +1,5 @@
 <?php
-include "config.inc.php";
+include 'config.inc.php';
 require 'mail/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
@@ -9,7 +9,7 @@ $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = $smtp;  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = '$smtp_username;                 // SMTP username
+$mail->Username = '$smtp_username';                 // SMTP username
 $mail->Password = '$smtp_password';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
