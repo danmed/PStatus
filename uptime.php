@@ -21,19 +21,6 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else
 	{
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = downs + 1, lastdown = '" . $date . "' WHERE id = '" . $id . "'";
-	$url = 'mail.php';
-	$data = array('subject' => 'Pstatus - Device Down - ' . $device, 'body' => $device . ' has not responded to a ping request', 'altbody' => $device . ' has not responded to a ping request');
-
-	// use key 'http' even if you send the request to https://...
-	$options = array(
-    	'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    	)
-	);
-	$context  = stream_context_create($options);
-	$result = file_get_contents($url, false, $context);
 	}
 	
 if (mysqli_query($db_handle, $SQL2)) {
