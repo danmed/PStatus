@@ -35,7 +35,8 @@ if ($db_found)
 	$enable_smart = $_POST['enable_smart'];
 	$dir_username = $_POST['dir_username'];
 	$dir_password = $_POST['dir_password'];
-	$updatesql = "UPDATE config SET enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
+	$alert_limit = $_POST['alert_limit'];
+	$updatesql = "UPDATE config SET alert_limit = '" . $alert_limit , "', enablesmart = '". $enable_smart . "', smtp = '" . $smtp ."', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
 	if (mysqli_query($db_handle, $updatesql)) {
     	$OUTPUT = "Settings Updated";
 	} 
@@ -68,8 +69,8 @@ if ($db_found)
 	<thead>
 	<tr><th colspan="3"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
 	</thead>
-	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td><td><b>Directory Security - <img src="icons/medical.png" title="Required if you have password protected the directory that PStatus is running from. Without it, emails cannot be sent."></td></tr>
-	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td><input type="text" size="20" name="refresh" value="<?PHP echo $refresh; ?>"></td><td><input type="text" size="20" name="dir_username" value="<?PHP echo $dir_username; ?>"> : <input type="text" size="20" name="dir_password" value="<?PHP echo $dir_password; ?>"></tr>
+	<tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td><td><b>Directory Security - <img src="icons/medical.png" title="Required if you have password protected the directory that PStatus is running from. Without it, emails cannot be sent."></td><td>Email Alert Limit</td></tr>
+	<tr><td><input type="checkbox" name="enable_smart" value="1" <?php if($enable_smart === '1') echo 'checked="checked"';?>></td><td><input type="text" size="20" name="refresh" value="<?PHP echo $refresh; ?>"></td><td><input type="text" size="20" name="dir_username" value="<?PHP echo $dir_username; ?>"> : <input type="text" size="20" name="dir_password" value="<?PHP echo $dir_password; ?>"><td><input type="text" size="20" name="alert_limit" value="<?PHP echo $alert_limit; ?></tr>
 	</table>
 <center>
 <input type="submit" value="update" class="btn btn-success"></form>
