@@ -54,8 +54,8 @@ $device = $_POST['device'];
 $show_modal = true;
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found = mysqli_select_db($db_handle, 'status');
-$SQLDELETE = "delete from servers where id = '$id'";
-$SQLDELETE2 = "delete from services where parent = 'id'";
+$SQLDELETE = "delete from servers where id = '$deleteid'";
+$SQLDELETE2 = "delete from services where parent = '$deleteid'";
 	
 if (mysqli_query($db_handle, $SQLDELETE)) {
     $OUTPUT = $device . " deleted";
