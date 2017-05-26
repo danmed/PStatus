@@ -32,7 +32,7 @@ $refresh = $_GET['refresh'];
 }
 
 </style>
-<script type="text/javascript">
+<script>
 	$(document).ready(function() {
     $('#example').DataTable();
 } );
