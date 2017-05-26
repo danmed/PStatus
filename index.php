@@ -146,7 +146,7 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 }
 	</script>
-	
+	</tbody>
 	</table>
 	<br>
 	<?PHP include "footer.php"; ?>
