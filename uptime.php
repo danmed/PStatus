@@ -21,7 +21,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	}
 	else
 	{
-	if ($downs >= '2'){
+	if ($downs >= $alert_limit){
 	$SQL2 = "UPDATE servers SET count = count + 1, downs = '0', lastdown = '" . $date . "' WHERE id = '" . $id . "'";
 	//extract data from the post
 	//set POST variables
