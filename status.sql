@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 22, 2017 at 07:34 AM
+-- Generation Time: May 26, 2017 at 10:54 AM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `status`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `config`
+--
+
+CREATE TABLE `config` (
+  `id` int(11) NOT NULL,
+  `enablesmart` int(11) NOT NULL,
+  `smtp` text NOT NULL,
+  `smtp_port` text NOT NULL,
+  `smtp_username` text NOT NULL,
+  `smtp_password` text NOT NULL,
+  `admin_email` text NOT NULL,
+  `refresh` int(11) NOT NULL,
+  `dir_username` text NOT NULL,
+  `dir_password` text NOT NULL,
+  `alert_limit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -78,12 +98,24 @@ CREATE TABLE `smartdevices` (
   `ip` text NOT NULL,
   `port` text NOT NULL,
   `info` text NOT NULL,
-  `purpose` text NOT NULL
+  `purpose` text NOT NULL,
+  `count` int(11) NOT NULL,
+  `ups` int(11) NOT NULL,
+  `downs` int(11) NOT NULL,
+  `lastup` datetime NOT NULL,
+  `lastdown` datetime NOT NULL,
+  `lastreset` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `config`
+--
+ALTER TABLE `config`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `servers`
@@ -107,6 +139,11 @@ ALTER TABLE `smartdevices`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `config`
+--
+ALTER TABLE `config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `servers`
 --
