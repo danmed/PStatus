@@ -131,8 +131,6 @@ function pingtest($ip)
     
 }
 
-mysqli_close($db_handle);
-
 ?>
    <script>
         var myVar;
