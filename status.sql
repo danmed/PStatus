@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2017 at 07:37 AM
+-- Generation Time: May 29, 2017 at 12:13 PM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -50,9 +50,9 @@ CREATE TABLE `servers` (
   `ip` text NOT NULL,
   `info` text NOT NULL,
   `purpose` text NOT NULL,
-  `count` int(11) NOT NULL DEFAULT '0',
-  `ups` int(11) NOT NULL DEFAULT '0',
-  `downs` int(11) NOT NULL DEFAULT '0',
+  `count` int(11) DEFAULT '0',
+  `ups` int(11) DEFAULT '0',
+  `downs` int(11) DEFAULT '0',
   `lastup` datetime DEFAULT NULL,
   `lastdown` datetime DEFAULT NULL,
   `lastreset` datetime DEFAULT NULL
@@ -114,4 +114,4 @@ ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COL
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
