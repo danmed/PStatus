@@ -54,14 +54,6 @@ echo $refresh;
 
 </style>
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-$("#status td.on_off:contains('offline')").css('background-color','#E05667');
-$("#status td.on_off:contains('online')").css('background-color','#56E08E');
-});
-
-</script>
     </head>
 
   <body>
