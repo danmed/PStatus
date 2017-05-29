@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 26, 2017 at 08:46 PM
+-- Generation Time: May 29, 2017 at 07:37 AM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -50,12 +50,12 @@ CREATE TABLE `servers` (
   `ip` text NOT NULL,
   `info` text NOT NULL,
   `purpose` text NOT NULL,
-  `count` int(11) NOT NULL,
-  `ups` int(11) NOT NULL,
-  `downs` int(11) NOT NULL,
-  `lastup` datetime NOT NULL,
-  `lastdown` datetime NOT NULL,
-  `lastreset` datetime NOT NULL
+  `count` int(11) NOT NULL DEFAULT '0',
+  `ups` int(11) NOT NULL DEFAULT '0',
+  `downs` int(11) NOT NULL DEFAULT '0',
+  `lastup` datetime DEFAULT NULL,
+  `lastdown` datetime DEFAULT NULL,
+  `lastreset` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -106,7 +106,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `servers`
 --
 ALTER TABLE `servers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -114,4 +114,4 @@ ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET COL
