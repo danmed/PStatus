@@ -53,7 +53,7 @@ if (isset($_POST['addserver'])) {
     $ip      = $_POST['ip'];
     $info    = $_POST['info'];
     $purpose = $_POST['purpose'];
-    $sql     = "INSERT INTO servers (device, ip, info, purpose) VALUES ('$device', '$ip', '$info', '$purpose')";
+    $sql     = "INSERT INTO servers (device, ip, info, purpose, count) VALUES ('$device', '$ip', '$info', '$purpose', '0')";
     if (mysqli_query($db_handle, $sql)) {
         $updateresult = "New record created successfully";
     } else {
