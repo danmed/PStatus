@@ -61,9 +61,6 @@ echo $refresh;
     <?PHP
 include "navbar.php";
 ?>
-
-
-
 <center>
 
     <div class="container">
