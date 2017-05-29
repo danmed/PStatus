@@ -45,7 +45,7 @@ if (isset($_POST['reset'])) {
     $show_modal = true;
     $date       = date("Y-m-d H:i:s");
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
-    $db_found   = mysqli_select_db($db_handle, 'status');
+    $db_found   = mysqli_select_db($db_handle, $DBName);
     $SQLRESET   = "UPDATE servers SET count = '0', ups = '0', downs='0', lastreset = '" . $date . "' WHERE id = '" . $resetid . "'";
     if (mysqli_query($db_handle, $SQLRESET)) {
         $OUTPUT = "Uptime Count reset to 0";
@@ -59,7 +59,7 @@ if (isset($_POST['delete'])) {
     $device     = $_POST['device'];
     $show_modal = true;
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
-    $db_found   = mysqli_select_db($db_handle, 'status');
+    $db_found   = mysqli_select_db($db_handle, $DBName);
     $SQLDELETE  = "delete from servers where id = '$deleteid'";
     $SQLDELETE2 = "delete from services where parent = '$deleteid'";
     
@@ -81,7 +81,7 @@ if (isset($_POST['updateserver'])) {
     $purpose    = $_POST['purpose'];
     $show_modal = true;
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
-    $db_found   = mysqli_select_db($db_handle, 'status');
+    $db_found   = mysqli_select_db($db_handle, $DBName);
     $SQLUPDATE  = "UPDATE servers SET device = '" . $device . "', ip = '" . $ip . "', info='" . $info . "', purpose = '" . $purpose . "' WHERE id = '" . $updateid . "'";
     if (mysqli_query($db_handle, $SQLUPDATE)) {
         $OUTPUT = $device . " information updated";
@@ -92,7 +92,7 @@ if (isset($_POST['updateserver'])) {
 
 
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
-$db_found  = mysqli_select_db($db_handle, 'status');
+$db_found  = mysqli_select_db($db_handle, $DBName);
 if ($db_found) {
     $SQL    = "select * from servers order by device desc";
     $result = mysqli_query($db_handle, $SQL);
