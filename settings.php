@@ -25,7 +25,7 @@ include "config.inc.php";
 if (isset($_POST['updatesetting'])) {
     
     $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
-    $db_found  = mysqli_select_db($db_handle, 'status');
+    $db_found  = mysqli_select_db($db_handle, $DBName);
     if ($db_found) {
         $updateid      = $_POST['updatesetting'];
         $smtp          = $_POST['smtp'];
