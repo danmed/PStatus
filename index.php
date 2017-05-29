@@ -133,7 +133,6 @@ function pingtest($ip)
 
 ?>
 
-
     <br>
     <?PHP
 include "footer.php";
