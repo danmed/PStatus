@@ -1,12 +1,13 @@
 <?PHP
 
 /* MYSQL Configuration */
-$DBServer	= 	'192.168.2.75';
-$DBUser		= 	'kodi';
-$DBPassword     = 	'kodi';
+$DBServer	= 	'dbaddress';
+$DBName     = 	'dbname';
+$DBUser		= 	'dbuser';
+$DBPassword     = 	'dbpass';
 
 $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
-$db_found = mysqli_select_db($db_handle, 'status');
+$db_found = mysqli_select_db($db_handle, $DBName);
 if ($db_found) 
 {
 $config_sql = "select * from config where id = 1"	;
