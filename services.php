@@ -68,11 +68,12 @@ $(document).ready(function(){
        
 </script>
 <center>
-    
+
+    <div id="gg1" class="gauge"></div>
 
 <div class="container">
 
-<div id="gg1" class="gauge"></div>
+
    
 <?PHP
 $parent = $_GET['parent'];
