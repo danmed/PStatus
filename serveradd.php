@@ -54,6 +54,7 @@ if (isset($_POST['addserver'])) {
     $info    = $_POST['info'];
     $purpose = $_POST['purpose'];
     $sql     = "INSERT INTO servers (device, ip, info, purpose, count) VALUES ('$device', '$ip', '$info', '$purpose', '0')";
+    $sql = mysqli_real_escape_string($db_handle, $sql);
     if (mysqli_query($db_handle, $sql)) {
         $updateresult = "New record created successfully";
     } else {
@@ -66,6 +67,7 @@ if (isset($_POST['addservice'])) {
     $port   = $_POST['port'];
     $parent = $_POST['parent'];
     $sql    = "INSERT INTO services (name, port, parent) VALUES ('$name', '$port', '$parent')";
+    $sql = mysqli_real_escape_string($db_handle, $sql);
     if (mysqli_query($db_handle, $sql)) {
         $updateresult2 = "New record created successfully";
     } else {
