@@ -23,29 +23,7 @@
     </head>
 
   <body>
-  <script src="js/raphael-2.1.4.min.js"></script>
-  <script src="js/justgage.js"></script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var gg1 = new JustGage({
-      id: "gg1",
-      value : 72.15,
-      min: 0,
-      max: 100,
-      decimals: 2,
-      gaugeWidthScale: 1.5,
-      customSectors: [{
-        color : "#ff0000",
-        lo : 0,
-        hi : 50
-      },{
-        color : "#00ff00",
-        lo : 50,
-        hi : 100
-      }],
-      counter: true
-    });
-      </script>
+
     <?PHP
 include "navbar.php";
 ?>
