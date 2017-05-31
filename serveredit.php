@@ -41,7 +41,7 @@ include "navbar.php";
 <?PHP
 include "config.inc.php";
 if (isset($_POST['reset'])) {
-    $resetid    = $_POST['reset'];
+    $resetid    = mysqli_real_escape_string($db_handle,$_POST['reset']);
     $show_modal = true;
     $date       = date("Y-m-d H:i:s");
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
@@ -55,8 +55,8 @@ if (isset($_POST['reset'])) {
 }
 
 if (isset($_POST['delete'])) {
-    $deleteid   = $_POST['delete'];
-    $device     = $_POST['device'];
+    $deleteid   = mysqli_real_escape_string($db_handle,$_POST['delete']);
+    $device     = mysqli_real_escape_string($db_handle,$_POST['device']);
     $show_modal = true;
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
     $db_found   = mysqli_select_db($db_handle, $DBName);
@@ -74,11 +74,11 @@ if (isset($_POST['delete'])) {
 }
 
 if (isset($_POST['updateserver'])) {
-    $updateid   = $_POST['updateserver'];
-    $device     = $_POST['device'];
-    $ip         = $_POST['ip'];
-    $info       = $_POST['info'];
-    $purpose    = $_POST['purpose'];
+    $updateid   = mysqli_real_escape_string($db_handle,$_POST['updateserver']);
+    $device     = mysqli_real_escape_string($db_handle,$_POST['device']);
+    $ip         = mysqli_real_escape_string($db_handle,$_POST['ip']);
+    $info       = mysqli_real_escape_string($db_handle,$_POST['info']);
+    $purpose    = mysqli_real_escape_string($db_handle,$_POST['purpose']);
     $show_modal = true;
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
     $db_found   = mysqli_select_db($db_handle, $DBName);
