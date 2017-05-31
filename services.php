@@ -18,12 +18,37 @@
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
+  .gauge {
+    width: 450px;
+    height: 450px;
+  }
 </style>
     </head>
 
   <body>
-
+  <script src="js/raphael-2.1.4.min.js"></script>
+  <script src="js/justgage.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var gg1 = new JustGage({
+      id: "gg1",
+      value : 72.15,
+      min: 0,
+      max: 100,
+      decimals: 2,
+      gaugeWidthScale: 0.6,
+      customSectors: [{
+        color : "#00ff00",
+        lo : 0,
+        hi : 50
+      },{
+        color : "#ff0000",
+        lo : 50,
+        hi : 100
+      }],
+      counter: true
+    });
+      </script>
     <?PHP
 include "navbar.php";
 ?>
@@ -43,8 +68,12 @@ $(document).ready(function(){
        
 </script>
 <center>
+    
+
 <div class="container">
 
+<div id="gg1" class="gauge"></div>
+   
 <?PHP
 $parent = $_GET['parent'];
 $device = $_GET['device'];
