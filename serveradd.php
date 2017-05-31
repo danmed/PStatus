@@ -49,12 +49,12 @@ $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
 $db_found  = mysqli_select_db($db_handle, $DBName);
 
 if (isset($_POST['addserver'])) {
-    $device  = $_POST['device'];
-    $ip      = $_POST['ip'];
-    $info    = $_POST['info'];
-    $purpose = $_POST['purpose'];
+    $device  = mysqli_real_escape_string($db_handle,$_POST['device']);
+    $ip      = mysqli_real_escape_string($db_handle,$_POST['ip']);
+    $info    = mysqli_real_escape_string($db_handle,$_POST['info']);
+    $purpose = mysqli_real_escape_string($db_handle,$_POST['purpose']);
     $sql     = "INSERT INTO servers (device, ip, info, purpose, count) VALUES ('$device', '$ip', '$info', '$purpose', '0')";
-    $sql = mysqli_real_escape_string($db_handle, $sql);
+   
     if (mysqli_query($db_handle, $sql)) {
         $updateresult = "New record created successfully";
     } else {
@@ -67,7 +67,7 @@ if (isset($_POST['addservice'])) {
     $port   = $_POST['port'];
     $parent = $_POST['parent'];
     $sql    = "INSERT INTO services (name, port, parent) VALUES ('$name', '$port', '$parent')";
-    $sql = mysqli_real_escape_string($db_handle, $sql);
+
     if (mysqli_query($db_handle, $sql)) {
         $updateresult2 = "New record created successfully";
     } else {
