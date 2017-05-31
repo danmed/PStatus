@@ -19,8 +19,8 @@
     box-shadow: none;
 }
   .gauge {
-    width: 450px;
-    height: 450px;
+    width: 250px;
+    height: 250px;
   }
 </style>
     </head>
@@ -36,13 +36,13 @@
       min: 0,
       max: 100,
       decimals: 2,
-      gaugeWidthScale: 0.6,
+      gaugeWidthScale: 1.5,
       customSectors: [{
-        color : "#00ff00",
+        color : "#ff0000",
         lo : 0,
         hi : 50
       },{
-        color : "#ff0000",
+        color : "#00ff00",
         lo : 50,
         hi : 100
       }],
