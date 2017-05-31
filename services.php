@@ -40,10 +40,7 @@ $(document).ready(function(){
     $("#status td.on_off:contains('true')").css('background-color','#56E08E');
 });
 
-var gauge = new FlexGauge({
-appendTo: '#demo'
-});
-        
+       
 </script>
 <center>
 <div class="container">
@@ -53,10 +50,7 @@ $parent = $_GET['parent'];
 $device = $_GET['device'];
 $ip     = $_GET['ip'];
 ?>
-<div id="gauge">
-    
-    </div>
-    
+  
     
 <table class="table" id="status" cellpadding="4" cellspacing="4" border="1">
 <thead>
