@@ -27,18 +27,18 @@ if (isset($_POST['updatesetting'])) {
     $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
     $db_found  = mysqli_select_db($db_handle, $DBName);
     if ($db_found) {
-        $updateid      = $_POST['updatesetting'];
-        $smtp          = $_POST['smtp'];
+        $updateid      = mysqli_real_escape_string($db_handle,$_POST['updatesetting']);
+        $smtp          = mysqli_real_escape_string($db_handle,$_POST['smtp']);
         $show_modal    = true;
-        $smtp_port     = $_POST['smtp_port'];
-        $smtp_username = $_POST['smtp_username'];
-        $smtp_password = $_POST['smtp_password'];
-        $admin_email   = $_POST['admin_email'];
-        $refresh       = $_POST['refresh'];
-        $enable_smart  = $_POST['enable_smart'];
+        $smtp_port     = mysqli_real_escape_string($db_handle,$_POST['smtp_port']);
+        $smtp_username = mysqli_real_escape_string($db_handle,$_POST['smtp_username']);
+        $smtp_password = mysqli_real_escape_string($db_handle,$_POST['smtp_password']);
+        $admin_email   = mysqli_real_escape_string($db_handle,$_POST['admin_email']);
+        $refresh       = mysqli_real_escape_string($db_handle,$_POST['refresh']);
+        $enable_smart  = mysqli_real_escape_string($db_handle,$_POST['enable_smart']);
         //$dir_username = $_POST['dir_username'];
         //$dir_password = $_POST['dir_password'];
-        $alert_limit   = $_POST['alert_limit'];
+        $alert_limit   = mysqli_real_escape_string($db_handle,$_POST['alert_limit']);
         $updatesql     = "UPDATE config SET alert_limit = '" . $alert_limit . "', enablesmart = '" . $enable_smart . "', smtp = '" . $smtp . "', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
         if (mysqli_query($db_handle, $updatesql)) {
             $OUTPUT = "Settings Updated";
