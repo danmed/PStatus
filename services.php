@@ -88,8 +88,6 @@ function servicetest($ip, $port)
     }
 }
 
-mysqli_close($db_handle);
-
 ?>
 
     </table>
