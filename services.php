@@ -18,10 +18,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-  .gauge {
-    width: 250px;
-    height: 250px;
-  }
+
 </style>
     </head>
 
@@ -69,7 +66,7 @@ $(document).ready(function(){
 </script>
 <center>
 
-    <div id="gg1" class="gauge"></div>
+    <div id="gg1" class="200x160px"></div>
 
 <div class="container">
 
