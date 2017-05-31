@@ -63,9 +63,9 @@ if (isset($_POST['addserver'])) {
 }
 
 if (isset($_POST['addservice'])) {
-    $name   = $_POST['name'];
-    $port   = $_POST['port'];
-    $parent = $_POST['parent'];
+    $name   = mysqli_real_escape_string($db_handle,$_POST['name']);
+    $port   = mysqli_real_escape_string($db_handle,$_POST['port']);
+    $parent = mysqli_real_escape_string($db_handle,$_POST['parent']);
     $sql    = "INSERT INTO services (name, port, parent) VALUES ('$name', '$port', '$parent')";
 
     if (mysqli_query($db_handle, $sql)) {
