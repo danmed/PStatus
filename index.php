@@ -100,7 +100,7 @@ if ($db_found) {
         if ($percent > 100) {
             $percent = 100;
         }
-        print "<tr><td>" . $device . " - <a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a></td><td>" . $info . "</td><td>" . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E>online</td>' : '<td style=background-color:#56E08E>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
+        print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a>- " . $device . "</td><td>" . $info . "</td><td>" . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E>online</td>' : '<td style=background-color:#56E08E>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
     }
     
     mysqli_close($db_handle);
