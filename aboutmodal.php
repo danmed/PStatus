@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <p>Written by Dan Medhurst</p>
-        <p>https://github.com/danmed/PStatus</p>
+        <p><a href="https://github.com/danmed/PStatus">Github</a></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
