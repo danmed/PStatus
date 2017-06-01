@@ -7,19 +7,18 @@ if (isset($_GET['refresh'])) {
 
 if (isset($_GET['ShowDevice'])) {
     $DeviceID = $_GET['ShowDevice'];
-    echo "test : " . $DeviceID;
     $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
     $db_found  = mysqli_select_db($db_handle, $DBName);
     $SQL    = "select * from servers where id ='" . $DeviceID . "'";
     $result = mysqli_query($db_handle, $SQL);
     
     while ($db_field = mysqli_fetch_assoc($result)) {
-    $DeviceName = $dbfield['device'];
-    $LastUp = $dbfield['lastup'];
-    $LastDown = $dbfield['lastdown'];
-    $LastReset = $dbfield['lastreset'];
-    $DeviceUps = $dbfield['ups'];
-    $DeviceDowns = $dbfield['downs'];
+    $DeviceName = $db_field['device'];
+    $LastUp = $db_field['lastup'];
+    $LastDown = $db_field['lastdown'];
+    $LastReset = $db_field['lastreset'];
+    $DeviceUps = $db_field['ups'];
+    $DeviceDowns = $db_field['downs'];
     $show_modal    = true;
     $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset . "<br>";
     }
