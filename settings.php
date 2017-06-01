@@ -78,13 +78,10 @@ echo $admin_email;
             
 <table class="table table-striped" cellpadding="4" cellspacing="4" border="1">
     <thead>
-    <tr><th colspan="4"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
+    <tr><th colspan="2"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
     </thead>
-    <tr><Td><b>Enable Smart Devices</td><td><b>Default Refresh Rate</td><td><b>Email Alert Threshold</td></tr>
-    <tr><td><input type="checkbox" name="enable_smart" value="1" <?php
-if ($enable_smart === '1')
-    echo 'checked="checked"';
-?>></td><td><input type="text" size="20" name="refresh" value="<?PHP
+    <tr><td><b>Default Refresh Rate</td><td><b>Email Alert Threshold</td></tr>
+    <tr><td><input type="text" size="20" name="refresh" value="<?PHP
 echo $refresh;
 ?>"></td><td><input type="text" size="20" name="alert_limit" value="<?PHP
 echo $alert_limit;
