@@ -15,7 +15,6 @@ Ping of internal servers and port check of related services with a Web front end
 * Users + Permissions
 
 # Planned
-* Display uptime data including last uptime / downtime
 * Edit Services
 * Add / Edit users so htaccess is no longer required
 * Enable / Disable email alerts (Currently always on)
@@ -34,6 +33,7 @@ Ping of internal servers and port check of related services with a Web front end
 * Edit Servers
 * removed smart devices and tables
 * Added search / sorting for main device table
+* Display uptime data including last uptime / downtime
 
 # Screenshot
 
