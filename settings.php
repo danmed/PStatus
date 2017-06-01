@@ -68,7 +68,7 @@ echo $smtp;
 echo $smtp_port;
 ?>"</td><td><input type="text" size="20" name="smtp_username" value="<?PHP
 echo $smtp_username;
-?>"</td><td><input type="text" size="20" name="smtp_password" value="<?PHP
+?>"</td><td><input type="password" size="20" name="smtp_password" value="<?PHP
 echo $smtp_password;
 ?>"</td><td><input type="text" size="20" name="admin_email" value="<?PHP
 echo $admin_email;
