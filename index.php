@@ -20,8 +20,9 @@ if (isset($_GET['ShowDevice'])) {
     $DeviceUps = $dbfield['ups'];
     $DeviceDowns = $dbfield['downs'];
     $show_modal    = true;
-        $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset;
+    $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset . "<br>";
     }
+}
 
 
 ?>
