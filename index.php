@@ -11,6 +11,7 @@ if (isset($_GET['ShowDevice'])) {
     $db_found  = mysqli_select_db($db_handle, $DBName);
     $SQL    = "select * from servers where id ='" . $DeviceID . "'";
     $result = mysqli_query($db_handle, $SQL);
+    
     while ($db_field = mysqli_fetch_assoc($result)) {
     $DeviceName = $dbfield['device'];
     $LastUp = $dbfield['lastup'];
@@ -19,7 +20,7 @@ if (isset($_GET['ShowDevice'])) {
     $DeviceUps = $dbfield['ups'];
     $DeviceDowns = $dbfield['downs'];
     $show_modal    = true;
-        $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset . "
+        $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset;
     }
 
 
