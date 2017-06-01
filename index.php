@@ -67,7 +67,7 @@ include "navbar.php";
     <table class="table table-striped table-bordered" id="status">
     <thead>
     <tr><th colspan="5"><center><b><img src="icons/005-computer-screen.png" width="16" height="16">&nbsp;Server Ping Status</th></tr>
-        <tr><th><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
+        <tr><th colspan="2"><b>DEVICE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>STATUS</th><th><b>UPTIME</th></tr>
     </thead>
     <tbody>
 <?PHP
@@ -100,7 +100,7 @@ if ($db_found) {
         if ($percent > 100) {
             $percent = 100;
         }
-        print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a> - " . $device . "</td><td>" . $info . "</td><td>" . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E>online</td>' : '<td style=background-color:#56E08E>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
+        print "<tr><td><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a></td><td>" . $device . "</td><td>" . $info . "</td><td>" . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E>online</td>' : '<td style=background-color:#56E08E>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
     }
     
     mysqli_close($db_handle);
