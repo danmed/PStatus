@@ -17,7 +17,7 @@ while ($db_field = mysqli_fetch_assoc($config_result))
 /* Display Smart Devices */
 $enable_smart = $db_field['enablesmart'];
 /* Default refresh rate for index page */
-$refresh = $db_field['refresh'];
+$refresh = $db_field['refresh'] . ";url=index.php";
 /* SMTP Details for admin emails */
 $smtp = $db_field['smtp'];
 $smtp_port = $db_field['smtp_port'];
