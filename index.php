@@ -169,7 +169,7 @@ endif;
       </div>
       <div class="modal-body">
         <p><?PHP
-echo $OUTPUT;
+echo $output;
 ?></p>
       </div>
       <div class="modal-footer">
