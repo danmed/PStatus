@@ -4,7 +4,28 @@ include "config.inc.php";
 if (isset($_GET['refresh'])) {
     $refresh = $_GET['refresh'];
 }
+
+if (isset($_GET['ShowDevice'])) {
+    $DeviceID = $_GET['ShowDevice'];
+    $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
+    $db_found  = mysqli_select_db($db_handle, $DBName);
+    $SQL    = "select * from servers where id ='" . $DeviceID . "'";
+    $result = mysqli_query($db_handle, $SQL);
+    while ($db_field = mysqli_fetch_assoc($result)) {
+    $DeviceName = $dbfield['device'];
+    $LastUp = $dbfield['lastup'];
+    $LastDown = $dbfield['lastdown'];
+    $LastReset = $dbfield['lastreset'];
+    $DeviceUps = $dbfield['ups'];
+    $DeviceDowns = $dbfield['downs'];
+    $show_modal    = true;
+        $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset . "
+    }
+
+
 ?>
+
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -100,7 +121,7 @@ if ($db_found) {
         if ($percent > 100) {
             $percent = 100;
         }
-        print "<tr><td>" . $device . "</td><td>" . $info . "</td><td><align='right'><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a> - " . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E><center>online</td>' : '<td style=background-color:#56E08E><center>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
+        print "<tr><td><a href='index.php?ShowDevice=" . $id . "'>" . $device . "</a></td><td>" . $info . "</td><td><align='right'><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a> - " . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E><center>online</td>' : '<td style=background-color:#56E08E><center>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
     }
     
     mysqli_close($db_handle);
@@ -121,6 +142,41 @@ function pingtest($ip)
 }
 
 ?>
+    
+    <?php
+if ($show_modal):
+?>
+   <script type='text/javascript'>
+    $(document).ready(function(){
+    $('#myModal').modal('show');
+    });
+    </script>
+<?php
+endif;
+?>
+   
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">PStatus - <?PHP echo $DeviceName; ?></h4>
+      </div>
+      <div class="modal-body">
+        <p><?PHP
+echo $OUTPUT;
+?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <br>
     <?PHP
