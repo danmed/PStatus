@@ -7,6 +7,7 @@ if (isset($_GET['refresh'])) {
 
 if (isset($_GET['ShowDevice'])) {
     $DeviceID = $_GET['ShowDevice'];
+    echo $DeviceID;
     $db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
     $db_found  = mysqli_select_db($db_handle, $DBName);
     $SQL    = "select * from servers where id ='" . $DeviceID . "'";
