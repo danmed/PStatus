@@ -64,7 +64,7 @@ $(document).ready(function() {
     </script>
     <meta http-equiv="refresh" content="<?PHP
 echo $refresh;
-?>";url="index.php">
+?>";url="http://www.google.co.uk">
     <title>PStatus</title>
 
 <style>    
