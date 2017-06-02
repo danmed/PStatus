@@ -4,6 +4,10 @@ include "config.inc.php";
 if (isset($_GET['refresh'])) {
     $refresh = $_GET['refresh'];
 }
+else
+{
+    $refresh = $refresh . ";url=index.php";
+}
 
 if (isset($_GET['ShowDevice'])) {
     $DeviceID = $_GET['ShowDevice'];
