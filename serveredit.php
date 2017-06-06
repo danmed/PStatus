@@ -35,7 +35,7 @@ include "navbar.php";
 <table class="table table-striped table-bordered" id="status">
     <thead>
         <tr><th colspan="7"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
-        <tr><th><b>DEVICE</th><th><b>IP</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th><th>DELETE</th></tr>
+      <tr><th><b>DEVICE</th><th><b>IP</th><th><b>TYPE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th><th>DELETE</th></tr>
 </thead>
         <tbody>
 <?PHP
@@ -115,6 +115,8 @@ if ($db_found) {
         echo $device;
 ?>"</td><td><input type="text" size="20" name="ip" value="<?PHP
         echo $ip;
+?>"</td><td><input type="text" size="20" name="type" value="<?PHP
+        echo $type;
 ?>"</td><td><input type="text" size="20" name="info" value="<?PHP
         echo $info;
 ?>"</td><td><input type="text" size="20" name="purpose" value="<?PHP
