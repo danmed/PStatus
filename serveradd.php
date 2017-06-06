@@ -51,9 +51,10 @@ $db_found  = mysqli_select_db($db_handle, $DBName);
 if (isset($_POST['addserver'])) {
     $device  = mysqli_real_escape_string($db_handle,$_POST['device']);
     $ip      = mysqli_real_escape_string($db_handle,$_POST['ip']);
+    $type    = mysqli_real_escape_string($db_handle,$_POST['type']);
     $info    = mysqli_real_escape_string($db_handle,$_POST['info']);
     $purpose = mysqli_real_escape_string($db_handle,$_POST['purpose']);
-    $sql     = "INSERT INTO servers (device, ip, info, purpose, count) VALUES ('$device', '$ip', '$info', '$purpose', '0')";
+    $sql     = "INSERT INTO servers (device, ip, type, info, purpose, count) VALUES ('$device', '$ip', '$type', '$info', '$purpose', '0')";
    
     if (mysqli_query($db_handle, $sql)) {
         $updateresult = "New record created successfully";
