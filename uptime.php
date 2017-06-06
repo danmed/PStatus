@@ -27,8 +27,6 @@ while ($db_field = mysqli_fetch_assoc($result))
 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
 require_once "Mail.php";
 $host = "ssl://" . $smtp;
-$username = $smtp_username;
-$password = $smtp_password;
 $port = $smtp_port;
 $to = $admin_email;
 $email_from = $smtp_username;
