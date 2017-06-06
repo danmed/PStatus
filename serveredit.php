@@ -77,12 +77,13 @@ if (isset($_POST['updateserver'])) {
     $updateid   = mysqli_real_escape_string($db_handle,$_POST['updateserver']);
     $device     = mysqli_real_escape_string($db_handle,$_POST['device']);
     $ip         = mysqli_real_escape_string($db_handle,$_POST['ip']);
+    $type       = mysqli_real_escape_string($db_handle,$_POST['type']);
     $info       = mysqli_real_escape_string($db_handle,$_POST['info']);
     $purpose    = mysqli_real_escape_string($db_handle,$_POST['purpose']);
     $show_modal = true;
     $db_handle  = mysqli_connect($DBServer, $DBUser, $DBPassword);
     $db_found   = mysqli_select_db($db_handle, $DBName);
-    $SQLUPDATE  = "UPDATE servers SET device = '" . $device . "', ip = '" . $ip . "', info='" . $info . "', purpose = '" . $purpose . "' WHERE id = '" . $updateid . "'";
+    $SQLUPDATE  = "UPDATE servers SET device = '" . $device . "', ip = '" . $ip . "', type='" . $type . "', info='" . $info . "', purpose = '" . $purpose . "' WHERE id = '" . $updateid . "'";
     if (mysqli_query($db_handle, $SQLUPDATE)) {
         $OUTPUT = $device . " information updated";
     } else {
@@ -99,6 +100,7 @@ if ($db_found) {
     while ($db_field = mysqli_fetch_assoc($result)) {
         $device  = $db_field['device'];
         $ip      = $db_field['ip'];
+        $type    = $db_field['type'];
         $id      = $db_field['id'];
         $port    = $db_field['port'];
         $info    = $db_field['info'];
