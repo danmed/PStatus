@@ -107,17 +107,22 @@ echo $updateresult;
 
 <?PHP
 $SQL    = "select * from servers";
-$result = mysqli_query($db_handle, $SQL);
-while ($db_field = mysqli_fetch_assoc($result)) {
+$serverresult = mysqli_query($db_handle, $SQL);
+while ($db_field = mysqli_fetch_assoc($serverresult)) {
     $parentid   = $db_field['id'];
     $parentname = $db_field['device'];
-    
+    $number_servers = mysqli_num_rows($serverresult);
     echo "<option value='" . $parentid . "'>" . $parentname . "</option>";
 }
 ?>
  
 </td></tr>
-<tr><td colspan="4"><center><input type="submit" value="submit" class="btn btn-success"></td></tr>
+<tr><td colspan="4"><center>
+  
+  <input type="submit" value="submit" class="btn btn-success<?PHP if ($number_servers < 1) { echo "disabled" } ?>">
+  
+  
+  </td></tr>
 <tr><td colspan="4"><center><?PHP
 echo $updateresult2;
 ?></td></tr>
