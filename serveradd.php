@@ -112,6 +112,7 @@ while ($db_field = mysqli_fetch_assoc($serverresult)) {
     $parentid   = $db_field['id'];
     $parentname = $db_field['device'];
     $number_servers = mysqli_num_rows($serverresult);
+  $number_servers = 0;
     echo "<option value='" . $parentid . "'>" . $parentname . "</option>";
 }
 ?>
