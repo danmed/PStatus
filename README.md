@@ -7,11 +7,12 @@ Ping of internal servers and port check of related services with a Web front end
 * MYSQL Database (import status.sql to a database)
 * uptime.php needs to be run as a cron timer - */10 * * * * /usr/bin/php /var/www/html/status/uptime.php
 
-# Confguration
-* change DBServer, , DBName, DBUser and DBPassword in config.inc.php
+# Configuration
+* Change all configurable options in config.inc.php
+* Access page and go to settings to configure email details and email threshold
+* Set up a cronjob to run uptime.php as often as you want to collect uptime
 
 # WIP
-
 * Users + Permissions
 
 # Planned
