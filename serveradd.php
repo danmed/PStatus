@@ -119,7 +119,7 @@ while ($db_field = mysqli_fetch_assoc($serverresult)) {
 </td></tr>
 <tr><td colspan="4"><center>
   
-  <input type="submit" value="submit" class="btn btn-success<?PHP if ($number_servers < 1) { echo "disabled" } ?>">
+  <input type="submit" value="submit" class="btn btn-success<?PHP if ($number_servers < 1) { echo "disabled"; } ?>">
   
   
   </td></tr>
