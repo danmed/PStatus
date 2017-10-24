@@ -32,7 +32,8 @@ if ($db_found) {
                     'Subject' => $email_subject,
                     'Reply-To' => $email_address
                 );
-                $smtp          = Mail::factory('smtp', array(
+                $params = array('debug'=>true,'host'=>$host,'port'=>$port,'auth'=>true,'username'=>$username,'password'=>$password);
+                $smtp          = Mail::factory('smtp', $params, array(
                     'host' => $host,
                     'port' => $port,
                     'auth' => true,
@@ -62,7 +63,8 @@ if ($db_found) {
                     'Subject' => $email_subject,
                     'Reply-To' => $email_address
                 );
-                $smtp          = Mail::factory('smtp', array(
+                $params = array('debug'=>true,'host'=>$host,'port'=>$port,'auth'=>true,'username'=>$username,'password'=>$password);
+                $smtp          = Mail::factory('smtp', $params, array(
                     'host' => $host,
                     'port' => $port,
                     'auth' => true,
