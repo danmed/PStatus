@@ -9,6 +9,7 @@ if ($db_found) {
     $result = mysqli_query($db_handle, $SQL);
     while ($db_field = mysqli_fetch_assoc($result)) {
         $id         = $db_field['id'];
+        $lastup     = $db_field['lastup'];
         $device     = $db_field['device'];
         $ip         = $db_field['ip'];
         $downs      = $db_field['downs'];
@@ -55,7 +56,7 @@ if ($db_found) {
                 $to            = $admin_email;
                 $email_from    = $smtp_username;
                 $email_subject = "PStatus - Device Down - " . $device;
-                $email_body    = $device . " has not replied to " . $alert_limit . " ping request(s)";
+                $email_body    = $device . " has not replied to " . $alert_limit . " ping request(s). Last time seen was " . $lastup . ".";
                 $headers       = array(
                     'From' => $email_from,
                     'To' => $to,
