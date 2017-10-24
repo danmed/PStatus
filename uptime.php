@@ -37,8 +37,8 @@ if ($db_found) {
                     'host' => $host,
                     'port' => $port,
                     'auth' => true,
-                    'username' => $username,
-                    'password' => $password
+                    'username' => $smtp_username,
+                    'password' => $smtp_password
                 ));
                 $mail          = $smtp->send($to, $headers, $email_body);
             } 
@@ -68,8 +68,8 @@ if ($db_found) {
                     'host' => $host,
                     'port' => $port,
                     'auth' => true,
-                    'username' => $username,
-                    'password' => $password
+                    'username' => $smtp_username,
+                    'password' => $smtp_password
                 ));
                 $mail          = $smtp->send($to, $headers, $email_body);
             } else {
