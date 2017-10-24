@@ -25,7 +25,7 @@ if ($db_found) {
                 $email_from    = $smtp_username;
                 $email_subject = "PStatus - Device Up - " . $device;
                 $email_body    = $device . " has recovered";
-                $email_address = "noreply@pstatus.com";
+                $email_address = $smtp_username;
                 $headers       = array(
                     'From' => $email_from,
                     'To' => $to,
@@ -56,7 +56,7 @@ if ($db_found) {
                 $email_from    = $smtp_username;
                 $email_subject = "PStatus - Device Down - " . $device;
                 $email_body    = $device . " has not replied to " . $alert_limit . " ping request(s)";
-                $email_address = "noreply@pstatus.com";
+                $email_address = $smtp_username;
                 $headers       = array(
                     'From' => $email_from,
                     'To' => $to,
