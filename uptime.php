@@ -19,19 +19,17 @@ if ($db_found) {
                 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
                 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
                 require_once "Mail.php";
-                $host          = $smtp;
+                $host          = 'ssl://'.$smtp;
                 $port          = $smtp_port;
                 $to            = $admin_email;
                 $email_from    = $smtp_username;
                 $email_subject = "PStatus - Device Up - " . $device;
                 $email_body    = $device . " has recovered";
-                $email_address = $smtp_username;
                 $headers       = array(
                     'From' => $email_from,
                     'To' => $to,
-                    'Subject' => $email_subject,
-                    'Reply-To' => $email_address
-                );
+                    'Subject' => $email_subject
+                                   );
                 $smtp          = Mail::factory('smtp', array(
                     'debug'=> true,
                     'host' => $host,
@@ -50,19 +48,17 @@ if ($db_found) {
                 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
                 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
                 require_once "Mail.php";
-                $host          = $smtp;
+                $host          = ssl://'.$smtp;
                 $port          = $smtp_port;
                 $to            = $admin_email;
                 $email_from    = $smtp_username;
                 $email_subject = "PStatus - Device Down - " . $device;
                 $email_body    = $device . " has not replied to " . $alert_limit . " ping request(s)";
-                $email_address = $smtp_username;
                 $headers       = array(
                     'From' => $email_from,
                     'To' => $to,
                     'Subject' => $email_subject,
-                    'Reply-To' => $email_address
-                );
+                                    );
                 $smtp          = Mail::factory('smtp', array(
                     'debug'=> true,
                     'host' => $host,
