@@ -78,7 +78,7 @@ if ($db_found) {
         }
         
         if (mysqli_query($db_handle, $SQL2)) {
-            echo "Record updated successfully";
+            echo "Record updated successfully<br>";
         } else {
             echo "Error updating record: " . mysqli_error($db_handle);
         }
