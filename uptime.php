@@ -41,7 +41,7 @@ if ($db_found) {
                     'password' => $password
                 ));
                 $mail          = $smtp->send($to, $headers, $email_body);
-            } else {
+            } 
                 $SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, downs = '0', lastup = '" . $date . "' WHERE id = '" . $id . "'";
             }
         } else {
