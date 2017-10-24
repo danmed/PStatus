@@ -13,12 +13,31 @@ while ($db_field = mysqli_fetch_assoc($result))
 	$device = $db_field['device'];
   	$ip = $db_field['ip'];
 	$downs = $db_field['downs'];
+	$Email_sent = $db_field['Email_Sent'];
 	$date = date("Y-m-d H:i:s");
 	$up = pingtest($ip);
 	$online = $up ? 'online' : 'offline';
 	if ($online == 'online'){
+		if ($Email_sent == 'yes'){
+			error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
+set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
+require_once "Mail.php";
+$host = "ssl://" . $smtp;
+$port = $smtp_port;
+$to = $admin_email;
+$email_from = $smtp_username;
+$email_subject = "PStatus - Device Up - " .$device ;
+$email_body = $device . " has recovered" ;
+$email_address = "noreply@pstatus.com";
+$headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
+$smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
+$mail = $smtp->send($to, $headers, $email_body);
+		}
+		else
+		{
 	$SQL2 = "UPDATE servers SET count = count + 1, ups = ups + 1, downs = '0', lastup = '" . $date . "' WHERE id = '" . $id . "'";
-	}
+		}
+		}
 	else
 	{
 	if ($downs + 1 >= $alert_limit){
