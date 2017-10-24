@@ -22,7 +22,7 @@ while ($db_field = mysqli_fetch_assoc($result))
 	else
 	{
 	if ($downs + 1 >= $alert_limit){
-	$SQL2 = "UPDATE servers SET count = count + 1, downs = '0', lastdown = '" . $date . "' WHERE id = '" . $id . "'";
+	$SQL2 = "UPDATE servers SET count = count + 1, downs = '0', Email_Sent = 'yes', lastdown = '" . $date . "' WHERE id = '" . $id . "'";
 	error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
 set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
 require_once "Mail.php";
