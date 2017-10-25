@@ -63,7 +63,7 @@ if (isset($_GET['ShowDevice'])) {
     <script type="text/javascript" class="init">
     
 $(document).ready(function() {
-    $('#status').DataTable();
+    $('#status').DataTable({  "pageLength": 50 });
 } );
     </script>
 <meta http-equiv="refresh" content="<?PHP
