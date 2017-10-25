@@ -31,6 +31,7 @@ include "navbar.php";
 
 
 <center>
+  
 <div class="container">
 <table class="table table-striped table-bordered" id="status">
     <thead>
