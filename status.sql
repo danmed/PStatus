@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2017 at 12:13 PM
+-- Generation Time: Oct 25, 2017 at 10:08 AM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
--- PHP Version: 7.0.15-0ubuntu0.16.04.4
+-- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,12 +47,14 @@ CREATE TABLE `config` (
 CREATE TABLE `servers` (
   `id` int(11) NOT NULL,
   `device` text NOT NULL,
+  `type` text NOT NULL,
   `ip` text NOT NULL,
   `info` text NOT NULL,
   `purpose` text NOT NULL,
   `count` int(11) DEFAULT '0',
   `ups` int(11) DEFAULT '0',
   `downs` int(11) DEFAULT '0',
+  `Email_Sent` text NOT NULL,
   `lastup` datetime DEFAULT NULL,
   `lastdown` datetime DEFAULT NULL,
   `lastreset` datetime DEFAULT NULL
@@ -106,12 +108,12 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `servers`
 --
 ALTER TABLE `servers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
