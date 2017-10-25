@@ -65,11 +65,10 @@ if (isset($_GET['ShowDevice'])) {
 $(document).ready(function() {
     $('#status').DataTable();
 } );
-        setInterval( function () {
-    table.ajax.reload( null, false ); // user paging is not reset on reload
-}, 5000 );
     </script>
-
+<meta http-equiv="refresh" content="<?PHP
+echo $refresh;
+?>">
     <title>PStatus</title>
 
 <style>    
