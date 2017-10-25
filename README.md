@@ -13,12 +13,10 @@ Ping of internal servers and port check of related services with a Web front end
 * Set up a cronjob to run uptime.php as often as you want to collect uptime
 
 # WIP
-* Users + Permissions
+* Enable / Disable email alerts
 
 # Planned
 * Edit Services
-* Add / Edit users so htaccess is no longer required
-* Enable / Disable email alerts (Currently always on)
 * Enable Disable alerts per device
 
 # Done
