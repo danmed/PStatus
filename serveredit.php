@@ -34,7 +34,7 @@ include "navbar.php";
 <div class="container">
 <table class="table table-striped table-bordered" id="status">
     <thead>
-        <tr><th colspan="7"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
+        <tr><th colspan="8"><center><img src="icons/005-computer-screen.png">&nbsp;Edit Servers</th></tr>
       <tr><th><b>DEVICE</th><th><b>IP</th><th><b>TYPE</th><th><b>INFO</th><th><b>PURPOSE</th><th><b>UPDATE</th><th>RESET</th><th>DELETE</th></tr>
 </thead>
         <tbody>
