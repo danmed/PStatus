@@ -26,6 +26,7 @@ $smtp_password = $db_field['smtp_password'];
 $admin_email = $db_field['admin_email'];
  /* Email Alert Down Limit */
 $alert_limit = $db_field['alert_limit'];
+$row_count = $db_field['rowcount'];
 }
 }
 
