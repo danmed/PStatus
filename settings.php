@@ -79,7 +79,7 @@ echo $admin_email;
             
 <table class="table table-striped" cellpadding="4" cellspacing="4" border="1">
     <thead>
-    <tr><th colspan="2"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
+    <tr><th colspan="3"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
     </thead>
     <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td><td>Rows to Display</td></tr>
     <tr><td><input type="text" size="20" name="refresh" value="<?PHP
