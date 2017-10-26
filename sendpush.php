@@ -17,8 +17,8 @@ if ($db_found) {
 
 echo $db_field['setToken'] . "<br>";
 echo $db_field['SetUser'] . "<br>";
-echo $db_field['Title'] . "<br>";
-        echo $db_field['Message'] . "<br>";
+echo $_GET['Title'] . "<br>";
+        echo $_GET['Message'] . "<br>";
         echo $db_field['SetPriority'] . "<br>";
         echo $db_field['SetRetry'] . "<br>";
         echo $db_field['SetExpire'] . "<br>";
