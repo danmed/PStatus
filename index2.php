@@ -24,20 +24,13 @@
 </div>
 
 </body>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('#my-example').dataTable({
-        "bProcessing": true,
-        "sAjaxSource": "data.php",
-        "aoColumns": [
-              { mData: 'device' } ,
-              { mData: 'type' },
-              { mData: 'info' },
-              { mData: 'purpose' },
-              { mData: 'status'  }
-            ]
-      });  
-  });
+<script>
+$(document).ready(function() {
+	$('#example').dataTable( {
+		"bProcessing": true,
+		"bServerSide": true,
+		"sAjaxSource": "data.php"
+	} );
+} );
 </script>
 </html>
