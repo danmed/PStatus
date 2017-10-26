@@ -15,6 +15,10 @@ if ($db_found) {
     $result = mysqli_query($db_handle, $SQL);
     while ($db_field = mysqli_fetch_assoc($result)) {
 
+        
+echo $db_field['setToken'];   
+echo $db_field['setUser'];
+        
 $push = new Pushover();
 $push->setToken($db_field['setToken']); //App Token
 $push->setUser($db_field['setUser']); // User Token
