@@ -26,7 +26,7 @@ $push->setExpire($db_field['setExpire']); //Used with Priority = 2; Pushover wil
 $push->setCallback($db_field['setCallback']);
 $push->setTimestamp(time());
 $push->setDebug(true);
-$push->setSound('$db_field['setSound']');
+$push->setSound($db_field['setSound']);
 
 $go = $push->send();
 
