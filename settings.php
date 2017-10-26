@@ -39,7 +39,7 @@ if (isset($_POST['updatesetting'])) {
         //$dir_username = $_POST['dir_username'];
         //$dir_password = $_POST['dir_password'];
         $alert_limit   = mysqli_real_escape_string($db_handle,$_POST['alert_limit']);
-        $row_count     = mysqli_real_esacpe_string($db_handle,$_POST['row_count']);
+        $row_count     = mysqli_real_escape_string($db_handle,$_POST['row_count']);
         $updatesql     = "UPDATE config SET rowcount = '" . $row_count . "' , alert_limit = '" . $alert_limit . "', enablesmart = '" . $enable_smart . "', smtp = '" . $smtp . "', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
         if (mysqli_query($db_handle, $updatesql)) {
             $OUTPUT = "Settings Updated";
