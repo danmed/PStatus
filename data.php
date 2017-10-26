@@ -1,6 +1,8 @@
 <?php
 
 require('config.inc.php');
+$db_handle = mysqli_connect($DBServer, $DBUser, $DBPassword);
+$db_found  = mysqli_select_db($db_handle, $DBName);
 
 $sql = "select * from servers order by device desc";
 $result = $mysqli->query($sql);
