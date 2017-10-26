@@ -18,7 +18,6 @@
           <th>Info</th>
           <th>Purpose</th>
           <th>Status></th>
-          <th>Uptime</th>
       </tr>
     </thead>
   </table>
@@ -30,11 +29,13 @@
   $(document).ready(function() {
       $('#my-example').dataTable({
         "bProcessing": true,
-        "sAjaxSource": "pro.php",
+        "sAjaxSource": "data.php",
         "aoColumns": [
-              { mData: 'id' } ,
-              { mData: 'name' },
-              { mData: 'email' }
+              { mData: 'device' } ,
+              { mData: 'type' },
+              { mData: 'info' },
+              { mData: 'purpose' },
+              { mData: 'status'  }
             ]
       });  
   });
