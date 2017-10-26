@@ -36,4 +36,7 @@ echo '<pre>';
 print_r($go);
 print "Receipt: $receipt\n";
 echo '</pre>';
+    }
+}
+        
 ?>
