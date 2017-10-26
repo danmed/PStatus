@@ -39,6 +39,7 @@ if (isset($_POST['updatesetting'])) {
         //$dir_username = $_POST['dir_username'];
         //$dir_password = $_POST['dir_password'];
         $alert_limit   = mysqli_real_escape_string($db_handle,$_POST['alert_limit']);
+        $row_count     = mysqli_real_esacpe_string($db_handle,$_POST['row_count']);
         $updatesql     = "UPDATE config SET alert_limit = '" . $alert_limit . "', enablesmart = '" . $enable_smart . "', smtp = '" . $smtp . "', smtp_port = '" . $smtp_port . "', smtp_username = '" . $smtp_username . "', smtp_password = '" . $smtp_password . "', admin_email = '" . $admin_email . "', refresh = '" . $refresh . "' where id = '1'";
         if (mysqli_query($db_handle, $updatesql)) {
             $OUTPUT = "Settings Updated";
@@ -80,11 +81,13 @@ echo $admin_email;
     <thead>
     <tr><th colspan="2"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
     </thead>
-    <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td></tr>
+    <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td><td>Rows to Display</td></tr>
     <tr><td><input type="text" size="20" name="refresh" value="<?PHP
 echo $refresh;
 ?>"></td><td><input type="text" size="20" name="alert_limit" value="<?PHP
 echo $alert_limit;
+?>"></td><td><input type="text" size="20" name="row_count" value="<?PHP
+echo $row_count;
 ?>"></td></tr>
     </table>
 <center>
