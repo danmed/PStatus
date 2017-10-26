@@ -106,6 +106,14 @@ if ($db_found) {
         $ups     = $db_field['ups'];
         $downs   = $db_field['downs'];
         $online   = $db_field['state'];
+        if ($online = 'online') 
+        {
+            $state = "<td style=background-color:#56E08E><center>online</td>";
+        }
+        else
+        {
+            $state = "<td style=background-color:#E05667><center>offline</td>";
+        }
         $value   = $ups;
         $max     = $count;
         $scale   = 1.0;
@@ -117,7 +125,7 @@ if ($db_found) {
         if ($percent > 100) {
             $percent = 100;
         }
-        print "<tr><td><a href='index.php?ShowDevice=" . $id . "'>" . $device . "</a></td><td>" . $type . "</td><td>" . $info . "</td><td><align='right'><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a> - " . $purpose . "</td>" . ($online ? '<td style=background-color:#56E08E><center>online</td>' : '<td style=background-color:#E05667><center>offline</td>') . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
+        print "<tr><td><a href='index.php?ShowDevice=" . $id . "'>" . $device . "</a></td><td>" . $type . "</td><td>" . $info . "</td><td><align='right'><a href='services.php?device=" . $device . "&parent=" . $id . "&ip=" . $ip . "' alt='" . $ip . "'><img src='icons/001-window.png'></a> - " . $purpose . "</td>" . $state . "</td><td><div class='progress'><div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='" . round($percent * $scale) . "' aria-valuemin='0' aria-valuemax='100' style='width:" . round($percent * $scale) . "%'>" . round($percent * $scale) . "%</div></div></td></tr>";
     }
     
     mysqli_close($db_handle);
