@@ -14,7 +14,17 @@ if ($db_found) {
     $SQL    = "select * from pushover where id = '1' ";
     $result = mysqli_query($db_handle, $SQL);
     while ($db_field = mysqli_fetch_assoc($result)) {
-  
+
+echo $db_field['setToken'] . "<br>";
+echo $db_field['SetUser'] . "<br>";
+echo $db_field['Title'] . "<br>";
+        echo $db_field['Message'] . "<br>";
+        echo $db_field['SetPriority'] . "<br>";
+        echo $db_field['SetRetry'] . "<br>";
+        echo $db_field['SetExpire'] . "<br>";
+        echo $db_field['SetCallback'] . "<br>";
+        echo $db_field['SetSound'] . "<br>";
+        
 $push = new Pushover();
 $push->setToken($db_field['setToken']); //App Token
 $push->setUser($db_field['SetUser']); // User Token
