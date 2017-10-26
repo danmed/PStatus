@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <?PHP
 include "config.inc.php";
-if (isset($_GET['refresh'])) {
-    $refresh = $_GET['refresh'];
-}
-else
-{
-    $refresh = $refresh . ";url=index.php";
-}
 
 if (isset($_GET['ShowDevice'])) {
     $DeviceID = $_GET['ShowDevice'];
@@ -28,10 +21,7 @@ if (isset($_GET['ShowDevice'])) {
     }
 }
 
-
 ?>
-
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -66,9 +56,7 @@ $(document).ready(function() {
     $('#status').DataTable({  "pageLength": 50 });
 } );
     </script>
-<meta http-equiv="refresh" content="<?PHP
-echo $refresh;
-?>">
+
     <title>PStatus</title>
 
 <style>    
