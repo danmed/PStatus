@@ -17,7 +17,7 @@ if ($db_found) {
 
         
 echo $db_field['setToken'];   
-echo $db_field['setUser'];
+echo $db_field['SetUser'];
         
 $push = new Pushover();
 $push->setToken($db_field['setToken']); //App Token
