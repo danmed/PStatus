@@ -81,7 +81,7 @@ echo $admin_email;
     <thead>
     <tr><th colspan="3"><center><img src="icons/settings-cogwheel.png">&nbsp;Misc Settings</th></tr>
     </thead>
-    <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td><td>Rows to Display</td></tr>
+    <tr><td><b>Default Refresh Rate (seconds)</td><td><b>Missed Ping Alert Threshold</td><td><b>Rows to Display</td></tr>
     <tr><td><input type="text" size="20" name="refresh" value="<?PHP
 echo $refresh;
 ?>"></td><td><input type="text" size="20" name="alert_limit" value="<?PHP
