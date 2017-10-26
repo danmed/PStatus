@@ -16,6 +16,7 @@ if (isset($_GET['ShowDevice'])) {
     $LastReset = $db_field['lastreset'];
     $DeviceUps = $db_field['ups'];
     $DeviceDowns = $db_field['downs'];
+    $state = $db_field['state'];
     $show_modal    = true;
     $output = "Last seen online : " . $LastUp . "<Br>Last seen offline : " . $LastDown . "<br>Last uptime reset : " . $LastReset . "<br>";
     }
@@ -104,7 +105,7 @@ if ($db_found) {
         $count   = $db_field['count'];
         $ups     = $db_field['ups'];
         $downs   = $db_field['downs'];
-        $online  = pingtest($ip);
+        $online   = $db_field['state'];
         $value   = $ups;
         $max     = $count;
         $scale   = 1.0;
@@ -126,17 +127,6 @@ if ($db_found) {
            </tbody>
     </table>
     </div>
-    <?PHP
-
-function pingtest($ip)
-{
-    
-    exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($ip)), $errorNo, $errorStr);
-    return $errorStr === 0;
-    
-}
-
-?>
     
     <?php
 if ($show_modal):
