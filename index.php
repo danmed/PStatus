@@ -106,7 +106,7 @@ if ($db_found) {
         $ups     = $db_field['ups'];
         $downs   = $db_field['downs'];
         $online   = $db_field['state'];
-        if ($online = 'online') 
+        if ($online == 'online') 
         {
             $state = "<td style=background-color:#56E08E><center>online</td>";
         }
