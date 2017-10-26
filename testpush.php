@@ -4,7 +4,7 @@
  * @version 0.1
  */
 
-include('Pushover.php');
+include('pushover.php');
 
 $push = new Pushover();
 $push->setToken('a5im31tiwpg4go2pofecu7dq1bbnot'); //App Token
