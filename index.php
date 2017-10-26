@@ -54,7 +54,7 @@ if (isset($_GET['ShowDevice'])) {
     <script type="text/javascript" class="init">
     
 $(document).ready(function() {
-    $('#status').DataTable({  "pageLength": <?php echo $row_count; ?> });
+    $('#status').DataTable({  "pageLength": <?php echo $row_count; ?>, stateSave: true });
 } );
     </script>
 
