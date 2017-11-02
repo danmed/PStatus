@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2017 at 10:08 AM
+-- Generation Time: Nov 02, 2017 at 03:02 PM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -35,7 +35,26 @@ CREATE TABLE `config` (
   `smtp_password` text NOT NULL,
   `admin_email` text NOT NULL,
   `refresh` int(11) NOT NULL,
-  `alert_limit` int(11) NOT NULL
+  `alert_limit` int(11) NOT NULL,
+  `rowcount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pushover`
+--
+
+CREATE TABLE `pushover` (
+  `id` int(11) NOT NULL,
+  `setToken` text NOT NULL,
+  `SetUser` text NOT NULL,
+  `SetSound` text NOT NULL,
+  `SetPriority` text NOT NULL,
+  `SetExpire` text NOT NULL,
+  `SetRetry` text NOT NULL,
+  `SetCallback` text NOT NULL,
+  `SetTimestamp` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -54,6 +73,7 @@ CREATE TABLE `servers` (
   `count` int(11) DEFAULT '0',
   `ups` int(11) DEFAULT '0',
   `downs` int(11) DEFAULT '0',
+  `state` text NOT NULL,
   `Email_Sent` text NOT NULL,
   `lastup` datetime DEFAULT NULL,
   `lastdown` datetime DEFAULT NULL,
@@ -84,6 +104,12 @@ ALTER TABLE `config`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pushover`
+--
+ALTER TABLE `pushover`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `servers`
 --
 ALTER TABLE `servers`
@@ -103,6 +129,11 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `config`
 --
 ALTER TABLE `config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `pushover`
+--
+ALTER TABLE `pushover`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `servers`
