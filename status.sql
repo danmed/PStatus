@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2017 at 03:02 PM
+-- Generation Time: Dec 14, 2017 at 03:56 PM
 -- Server version: 5.6.35-1+deb.sury.org~xenial+0.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -73,7 +73,7 @@ CREATE TABLE `servers` (
   `count` int(11) DEFAULT '0',
   `ups` int(11) DEFAULT '0',
   `downs` int(11) DEFAULT '0',
-  `state` text NOT NULL,
+  `state` text,
   `Email_Sent` text NOT NULL,
   `lastup` datetime DEFAULT NULL,
   `lastdown` datetime DEFAULT NULL,
